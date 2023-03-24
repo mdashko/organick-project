@@ -1,0 +1,69 @@
+@use "_globals.scss";
+@import "_variables.scss";
+
+.header {
+	display: flex;
+	justify-content: space-around;
+	padding: 2.5%;
+	font-family: $headerFonts;
+	color: $headerTextClr;
+	background-color: red;
+	&__logo {
+		display: flex;
+		justify-content: baseline;
+		font-size: 1.5em;
+		&_text {
+			margin: 0.5em;
+		}
+	}
+	&__navbar {
+		display: flex;
+		&_item {
+			color: $headerTextClr;
+			margin: 1em;
+		}
+	}
+	&__inputs {
+		display: flex;
+		align-self: flex-start;
+		&_search {
+			position: relative;
+			margin: 0 0.5em;
+			&_input {
+				border-radius: 2.5em;
+				border: none;
+				background-color: $searchInputClr;
+				width: 15em;
+				height: 3.5em;
+				position: relative;
+			}
+			&_icon {
+				height: 2.5em;
+				position: absolute;
+				top: 5.5%;
+				right: 2%;
+			}
+		}
+		&_cart {
+			position: relative;
+			display: flex;
+			box-sizing: border-box;
+			border: 0.06em solid #e0e0e0;
+			border-radius: 2.5em;
+			width: 10em;
+			height: 3.5em;
+			&_icon {
+				position: absolute;
+				height: 3em;
+				left: 3%;
+				top: 5.5%;
+			}
+			&_name {
+				position: absolute;
+				top: 30%;
+				left: 45%;
+				text-align: center;
+			}
+		}
+	}
+}
