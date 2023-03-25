@@ -3,6 +3,7 @@
 
 .main {
 	width: 100%;
+	background-color: $mainClr;
 	&__banner {
 		position: relative;
 		display: flex;
@@ -26,7 +27,7 @@
 	}
 	&__offer-banner {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
 		margin: 5em 0;
 		div {
 			position: relative;
@@ -35,6 +36,7 @@
 			img {
 				position: relative;
 				width: 30em;
+				margin: 0 0.5em;
 			}
 			div {
 				position: absolute;
@@ -71,6 +73,199 @@
 					}
 				}
 			}
+		}
+	}
+	&__testimonial {
+		position: relative;
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		&_img {
+			position: relative;
+			width: 100vw;
+		}
+		&__content {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			//top: 0;
+			&__container {
+				display: flex;
+				flex-direction: column;
+				margin: 5em 0;
+				width: 65%;
+				&_img {
+					align-self: center;
+					width: 15%;
+					margin: 2.5em 0 0.5em;
+				}
+				&_rating {
+					align-self: center;
+					width: 15%;
+					margin: 1em 0;
+				}
+				&_nav {
+					width: 5%;
+					align-self: center;
+					margin: 1em 0;
+				}
+			}
+		}
+	}
+	&__offer {
+		background-color: $offerSectionClr;
+		display: flex;
+		flex-direction: column;
+		padding: 5em;
+		&__content {
+			display: flex;
+			flex-direction: column;
+			align-self: flex-start;
+		}
+	}
+	&__eco-friendly {
+		display: flex;
+		&__container {
+			width: 50%;
+			&_img {
+				width: 100%;
+			}
+		}
+		&__content-container {
+			position: relative;
+			width: 50%;
+			&__card {
+				position: absolute;
+				left: -10%;
+				top: 10%;
+				background-color: $ecoFriendlyCardClr;
+				border-radius: 2em;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 5em;
+				width: 28em;
+				height: 25em;
+				&__points {
+					margin: 1em 0;
+					&__point {
+						margin: 0.8em 0;
+						display: flex;
+						flex-direction: column;
+					}
+				}
+			}
+		}
+	}
+	&__gallery {
+		background-color: $gallerySectionClr;
+		display: flex;
+		justify-content: space-between;
+		padding: 5em 0;
+		&_img {
+			width: 25em;
+		}
+	}
+	&__news {
+		&__container {
+			padding: 7em;
+			&__content {
+				display: flex;
+				&__headings {
+					width: 50%;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+			&__imgs-container {
+				display: flex;
+				justify-content: space-evenly;
+				&__img-container {
+					position: relative;
+					width: 50%;
+					margin: 2.5em 0.5em;
+					&_img {
+						position: relative;
+						width: 38em;
+					}
+					&_date {
+						position: absolute;
+						top: 5%;
+						left: 5%;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						border-radius: 50%;
+						background-color: $dateClr;
+						width: 5em;
+						height: 5em;
+					}
+				}
+				&__card {
+					position: absolute;
+					bottom: -7%;
+					left: 5%;
+					box-shadow: 0 1.5em 2em rgba(167, 167, 167, 0.25);
+					border-radius: 2em 2em 2em 2em;
+					width: 28em;
+					height: 10em;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					padding: 3em;
+					background-color: $newsSectionCardClr;
+					&__content {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						&__name {
+							display: flex;
+							img {
+								margin-right: 0.5em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&__newsletter {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		padding: 2em 1.5em;
+		img {
+			position: relative;
+			width: 100%;
+		}
+		&__heading {
+			width: 30%;
+			position: absolute;
+			top: 35%;
+			left: 5%;
+		}
+		&__form {
+			//width: 60%;
+			position: absolute;
+			top: 35%;
+			right: 5%;
+			display: flex;
+			&_input {
+				border-radius: 1em;
+				width: 19em;
+				height: 5em;
+				padding: 0 1.5em;
+				border: none;
+				font-style: italic;
+			}
+			// &_btn{
+
+			// }
 		}
 	}
 }

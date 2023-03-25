@@ -7,7 +7,7 @@ const TextSize = {
 	h4: "2.5em",
 	h5: "2em",
 	h6: "1.5em",
-	p: "1em",
+	p: "0.9em",
 };
 
 const FontFamilies = {
