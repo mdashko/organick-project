@@ -1,24 +1,22 @@
 import React from "react";
+import { fontFamilies, colors, widthes } from "../constants";
 
-const TextSize = {
-	h1: 70,
-	h2: 50,
-	h3: 40,
-	h4: 35,
-	h5: 30,
-	p: 18,
-};
-
-const BtnColors = {
-	yellowBtn: "#EFD372",
-	darkBlueBtn: "#335B6B",
-	whiteBtn: "#fff",
-};
-
-export const StyledBtn = ({ title, color, titleClr }) => {
+export const StyledBtn = ({ children, textClr, bgClr, borderClr, width }) => {
 	return (
-		<button>
-			<img src="" alt="" />
+		<button
+			style={{
+				margin: "2.5em 0",
+				width: widthes[width],
+				height: "4em",
+				border: `1em solid ${colors[borderClr]}`,
+				borderRadius: "1em",
+				backgroundColor: colors[bgClr],
+				color: colors[textClr],
+				fontFamily: fontFamilies["buttons"],
+			}}
+		>
+			{" "}
+			{children}
 		</button>
 	);
 };

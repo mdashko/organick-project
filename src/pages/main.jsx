@@ -19,6 +19,7 @@ import tomatoes from "../images/tomatoes.svg";
 import personIcon from "../images/personIcon.svg";
 import formBackground from "../images/formBackground.svg";
 import { StyledText } from "../UI/StyledText";
+import { StyledBtn } from "../UI/StyledBtn";
 
 export const Main = () => {
 	return (
@@ -31,23 +32,50 @@ export const Main = () => {
 				/>
 				<img className="main__banner_img" src={bannerImage} alt="delicious" />
 				<div className="main__banner__container">
-					<StyledText size="h6" weight="400" text="preHeading" color="green">
+					<StyledText
+						size="h6"
+						weight="normal"
+						family="preHeadings"
+						color="preHeadings"
+					>
 						100% Natural Food
 					</StyledText>
-					<StyledText size="h1" weight="800" text="heading" color="darkBlue">
+					<StyledText
+						size="h1"
+						weight="bold"
+						family="headings"
+						color="headings"
+					>
 						Choose the best healthier way of life
 					</StyledText>
-					<button></button>
+					<StyledBtn
+						textClr="buttonText"
+						bgClr="buttonsYellow"
+						borderClr="buttonBorderYellow"
+						width="narrow"
+					>
+						Explore Now
+					</StyledBtn>
 				</div>
 			</section>
 			<section className="main__offer-banner">
 				<div>
 					<img src={offerBannerImg1} alt="bananas" />
 					<div>
-						<StyledText size="h6" weight="400" text="preHeading" color="white">
+						<StyledText
+							size="h6"
+							weight="normal"
+							family="preHeadings"
+							color="preHeadingsWhite"
+						>
 							Natural!!
 						</StyledText>
-						<StyledText size="h5" weight="800" text="heading" color="white">
+						<StyledText
+							size="h5"
+							weight="bold"
+							family="headings"
+							color="headingsWhite"
+						>
 							Get Garden Fresh Fruits
 						</StyledText>
 					</div>
@@ -55,10 +83,20 @@ export const Main = () => {
 				<div>
 					<img src={offerBannerImg2} alt="peaches" />
 					<div>
-						<StyledText size="h6" weight="400" text="preHeading" color="green">
+						<StyledText
+							size="h6"
+							weight="normal"
+							family="preHeadings"
+							color="preHeadings"
+						>
 							Offer!!
 						</StyledText>
-						<StyledText size="h5" weight="800" text="heading" color="darkBlue">
+						<StyledText
+							size="h5"
+							weight="bold"
+							family="headings"
+							color="headings"
+						>
 							Get 10% off on Vegetables
 						</StyledText>
 					</div>
@@ -67,13 +105,28 @@ export const Main = () => {
 			<section className="main__about-us">
 				<img className="main__about-us_img" src={lemons} alt="lemons" />
 				<div className="main__about-us__content">
-					<StyledText size="h5" weight="400" text="preHeading" color="green">
+					<StyledText
+						size="h5"
+						weight="normal"
+						family="preHeadings"
+						color="preHeadings"
+					>
 						About Us
 					</StyledText>
-					<StyledText size="h3" weight="800" text="heading" color="darkBlue">
+					<StyledText
+						size="h3"
+						weight="bold"
+						family="headings"
+						color="headings"
+					>
 						We Believe in Working Accredited Farmers
 					</StyledText>
-					<StyledText size="p" weight="300" text="paragraph" color="darkBlue">
+					<StyledText
+						size="p"
+						weight="normal"
+						family="paragraphs"
+						color="paragraphs"
+					>
 						Simply dummy text of the printing and typesetting industry. Lorem
 						had ceased to been the industry's standard dummy text ever since the
 						1500s, when an unknown printer took a galley.
@@ -88,17 +141,17 @@ export const Main = () => {
 							<div className="main__about-us__content__points__point__content">
 								<StyledText
 									size="h6"
-									weight="800"
-									text="heading"
-									color="darkBlue"
+									weight="bold"
+									family="headings"
+									color="headings"
 								>
 									Organic Foods Only
 								</StyledText>
 								<StyledText
 									size="p"
-									weight="300"
-									text="paragraph"
-									color="darkBlue"
+									weight="normal"
+									family="paragraphs"
+									color="paragraphs"
 								>
 									Simply dummy text of the printing and typesetting industry.
 									Lorem Ipsum
@@ -114,17 +167,17 @@ export const Main = () => {
 							<div className="main__about-us__content__points__point__content">
 								<StyledText
 									size="h6"
-									weight="800"
-									text="heading"
-									color="darkBlue"
+									weight="bold"
+									family="headings"
+									color="headings"
 								>
 									Quality Standards
 								</StyledText>
 								<StyledText
 									size="p"
-									weight="300"
-									text="paragraph"
-									color="darkBlue"
+									weight="normal"
+									family="paragraphs"
+									color="paragraphs"
 								>
 									Simply dummy text of the printing and typesetting industry.
 									Lorem Ipsum
@@ -132,6 +185,14 @@ export const Main = () => {
 							</div>
 						</div>
 					</div>
+					<StyledBtn
+						textClr="buttonTextWhite"
+						bgClr="buttons"
+						borderClr="buttonBorder"
+						width="narrow"
+					>
+						Shop Now
+					</StyledBtn>
 				</div>
 			</section>
 			{/* PRODUCT SECTION HERE */}
@@ -143,10 +204,20 @@ export const Main = () => {
 				/>
 				<div className="main__testimonial__content">
 					<div className="main__testimonial__content__container">
-						<StyledText size="h5" weight="400" text="preHeading" color="green">
+						<StyledText
+							size="h5"
+							weight="normal"
+							family="preHeadings"
+							color="preHeadings"
+						>
 							Testimonial
 						</StyledText>
-						<StyledText size="h3" weight="800" text="heading" color="darkBlue">
+						<StyledText
+							size="h3"
+							weight="bold"
+							family="headings"
+							color="headings"
+						>
 							What Our Customer Saying?
 						</StyledText>
 						<img
@@ -159,15 +230,30 @@ export const Main = () => {
 							src={stars}
 							alt="rating"
 						/>
-						<StyledText size="p" weight="300" text="paragraph" color="darkBlue">
+						<StyledText
+							size="p"
+							weight="normal"
+							family="paragraphs"
+							color="paragraphs"
+						>
 							Simply dummy text of the printing and typesetting industry. Lorem
 							Ipsum simply dummy text of the printing and typesetting industry.
 							Lorem Ipsum has been.
 						</StyledText>
-						<StyledText size="h6" weight="300" text="heading" color="darkBlue">
+						<StyledText
+							size="h6"
+							weight="normal"
+							family="headings"
+							color="headings"
+						>
 							Sara Taylor
 						</StyledText>
-						<StyledText size="p" weight="300" text="paragraph" color="darkBlue">
+						<StyledText
+							size="p"
+							weight="normal"
+							family="headings"
+							color="headings"
+						>
 							Customer
 						</StyledText>
 						<img
@@ -180,10 +266,20 @@ export const Main = () => {
 			</section>
 			<section className="main__offer">
 				<div className="main__offer__content">
-					<StyledText size="h5" weight="400" text="preHeading" color="green">
+					<StyledText
+						size="h5"
+						weight="normal"
+						family="preHeadings"
+						color="preHeadings"
+					>
 						Offer
 					</StyledText>
-					<StyledText size="h3" weight="800" text="heading" color="white">
+					<StyledText
+						size="h3"
+						weight="bold"
+						family="headings"
+						color="headingsWhite"
+					>
 						We Offer Organic For You
 					</StyledText>
 				</div>
@@ -199,27 +295,37 @@ export const Main = () => {
 				</div>
 				<div className="main__eco-friendly__content-container">
 					<div className="main__eco-friendly__content-container__card">
-						<StyledText size="h5" weight="400" text="preHeading" color="green">
+						<StyledText
+							size="h5"
+							weight="normal"
+							family="preHeadings"
+							color="preHeadings"
+						>
 							Offer
 						</StyledText>
-						<StyledText size="h3" weight="800" text="heading" color="darkBlue">
+						<StyledText
+							size="h3"
+							weight="bold"
+							family="headings"
+							color="headings"
+						>
 							We Offer Organic For You
 						</StyledText>
 						<div className="main__eco-friendly__content-container__card__points">
 							<div className="main__eco-friendly__content-container__card__points__point">
 								<StyledText
 									size="h6"
-									weight="800"
-									text="heading"
-									color="darkBlue"
+									weight="bold"
+									family="headings"
+									color="headings"
 								>
 									Start with Our Company First
 								</StyledText>
 								<StyledText
 									size="p"
-									weight="300"
-									text="paragraph"
-									color="darkBlue"
+									weight="normal"
+									family="paragraphs"
+									color="paragraphs"
 								>
 									Sed ut perspiciatis unde omnis iste natus error sit voluptat
 									accusantium doloremque laudantium. Sed ut perspiciatis.
@@ -228,17 +334,17 @@ export const Main = () => {
 							<div className="main__eco-friendly__content-container__card__points__point">
 								<StyledText
 									size="h6"
-									weight="800"
-									text="heading"
-									color="darkBlue"
+									weight="bold"
+									family="headings"
+									color="headings"
 								>
 									Learn How to Grow Yourself
 								</StyledText>
 								<StyledText
 									size="p"
-									weight="300"
-									text="paragraph"
-									color="darkBlue"
+									weight="normal"
+									family="paragraphs"
+									color="paragraphs"
 								>
 									Sed ut perspiciatis unde omnis iste natus error sit voluptat
 									accusantium doloremque laudantium. Sed ut perspiciatis.
@@ -247,17 +353,17 @@ export const Main = () => {
 							<div className="main__eco-friendly__content-container__card__points__point">
 								<StyledText
 									size="h6"
-									weight="800"
-									text="heading"
-									color="darkBlue"
+									weight="bold"
+									family="headings"
+									color="headings"
 								>
 									Farming Strategies of Today
 								</StyledText>
 								<StyledText
 									size="p"
-									weight="300"
-									text="paragraph"
-									color="darkBlue"
+									weight="normal"
+									family="paragraphs"
+									color="paragraphs"
 								>
 									Sed ut perspiciatis unde omnis iste natus error sit voluptat
 									accusantium doloremque laudantium. Sed ut perspiciatis.
@@ -282,17 +388,17 @@ export const Main = () => {
 						<div className="main__news__container__content__headings">
 							<StyledText
 								size="h5"
-								weight="400"
-								text="preHeading"
-								color="green"
+								weight="medium"
+								family="preHeadings"
+								color="preHeadings"
 							>
 								News
 							</StyledText>
 							<StyledText
 								size="h4"
-								weight="800"
-								text="heading"
-								color="darkBlue"
+								weight="bold"
+								family="headings"
+								color="headings"
 							>
 								Discover weekly content about organic food, & more
 							</StyledText>
@@ -311,17 +417,17 @@ export const Main = () => {
 							<div className="main__news__container__imgs-container__img-container_date">
 								<StyledText
 									size="h6"
-									weight="500"
-									text="heading"
-									color="darkBlue"
+									weight="semiBold"
+									family="headings"
+									color="headings"
 								>
 									25
 								</StyledText>
 								<StyledText
 									size="h6"
-									weight="500"
-									text="heading"
-									color="darkBlue"
+									weight="semiBold"
+									family="headings"
+									color="headings"
 								>
 									Nov
 								</StyledText>
@@ -332,30 +438,38 @@ export const Main = () => {
 										<img src={personIcon} alt="person icon" />
 										<StyledText
 											size="p"
-											weight="300"
-											text="paragraph"
-											color="darkBlue"
+											weight="normal"
+											family="paragraphs"
+											color="paragraphs"
 										>
 											By Rachi Card
 										</StyledText>
 									</div>
 									<StyledText
 										size="h6"
-										weight="800"
-										text="heading"
-										color="darkBlue"
+										weight="bold"
+										family="headings"
+										color="headings"
 									>
 										The Benefits of Vitamin D & How to Get It
 									</StyledText>
 									<StyledText
 										size="p"
-										weight="300"
-										text="paragraph"
-										color="darkBlue"
+										weight="normal"
+										family="paragraphs"
+										color="paragraphs"
 									>
 										Simply dummy text of the printing and typesetting industry.
 										Lorem Ipsum
 									</StyledText>
+									<StyledBtn
+										textClr="buttonText"
+										bgClr="buttonsYellow"
+										borderClr="buttonBorderYellow"
+										width="narrow"
+									>
+										Read More
+									</StyledBtn>
 								</div>
 							</div>
 						</div>
@@ -368,17 +482,17 @@ export const Main = () => {
 							<div className="main__news__container__imgs-container__img-container_date">
 								<StyledText
 									size="h6"
-									weight="500"
-									text="heading"
-									color="darkBlue"
+									weight="semiBold"
+									family="headings"
+									color="headings"
 								>
 									25
 								</StyledText>
 								<StyledText
 									size="h6"
-									weight="500"
-									text="heading"
-									color="darkBlue"
+									weight="semiBold"
+									family="headings"
+									color="headings"
 								>
 									Nov
 								</StyledText>
@@ -389,30 +503,38 @@ export const Main = () => {
 										<img src={personIcon} alt="person icon" />
 										<StyledText
 											size="p"
-											weight="300"
-											text="paragraph"
-											color="darkBlue"
+											weight="normal"
+											family="paragraphs"
+											color="paragraphs"
 										>
 											By Rachi Card
 										</StyledText>
 									</div>
 									<StyledText
 										size="h6"
-										weight="800"
-										text="heading"
-										color="darkBlue"
+										weight="bold"
+										family="headings"
+										color="headings"
 									>
 										Our Favourite Summertime Tommeto
 									</StyledText>
 									<StyledText
 										size="p"
-										weight="300"
-										text="paragraph"
-										color="darkBlue"
+										weight="normal"
+										family="paragraphs"
+										color="paragraphs"
 									>
 										Simply dummy text of the printing and typesetting industry.
 										Lorem Ipsum
 									</StyledText>
+									<StyledBtn
+										textClr="buttonText"
+										bgClr="buttonsYellow"
+										borderClr="buttonBorderYellow"
+										width="narrow"
+									>
+										Read More
+									</StyledBtn>
 								</div>
 							</div>
 						</div>
@@ -422,13 +544,29 @@ export const Main = () => {
 			<section className="main__newsletter">
 				<img src={formBackground} alt="oranges" />
 				<div className="main__newsletter__heading">
-					<StyledText size="h3" weight="800" text="heading" color="white">
+					<StyledText
+						size="h3"
+						weight="bold"
+						family="headings"
+						color="headingsWhite"
+					>
 						Subscribe to our Newsletter
 					</StyledText>
 				</div>
 				<div className="main__newsletter__form">
-					<input className="main__newsletter__form_input" type="text" placeholder="Your Email Address" />
-					<button className="main__newsletter__form_btn"></button>
+					<input
+						className="main__newsletter__form_input"
+						type="text"
+						placeholder="Your Email Address"
+					/>
+					<StyledBtn
+						textClr="buttonTextWhite"
+						bgClr="buttons"
+						borderClr="buttonBorder"
+						width="wide"
+					>
+						Subscribe
+					</StyledBtn>
 				</div>
 			</section>
 		</div>

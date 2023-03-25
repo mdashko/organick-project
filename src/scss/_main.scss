@@ -250,11 +250,11 @@
 			left: 5%;
 		}
 		&__form {
-			//width: 60%;
 			position: absolute;
 			top: 35%;
 			right: 5%;
 			display: flex;
+			align-items: flex-start;
 			&_input {
 				border-radius: 1em;
 				width: 19em;
@@ -263,8 +263,8 @@
 				border: none;
 				font-style: italic;
 			}
-			// &_btn{
-
+			// &__wrapper {
+			// 	margin: 0 0.5em 2em;
 			// }
 		}
 	}

@@ -14,24 +14,29 @@ export const Footer = () => {
 		<div className="footer">
 			<div className="footer__wrapper">
 				<div className="footer__wrapper__contacts">
-					<StyledText size="h6" weight="800" text="heading" color="darkBlue">
+					<StyledText
+						size="h6"
+						weight="bold"
+						family="headings"
+						color="headings"
+					>
 						Contact Us
 					</StyledText>
 					<div className="footer__wrapper__contacts__content">
 						<div className="footer__wrapper__contacts__content__item">
 							<StyledText
 								size="p"
-								weight="800"
-								text="paragraph"
-								color="darkBlue"
+								weight="bold"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								Email
 							</StyledText>
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								needhelp@Organia.com
 							</StyledText>
@@ -39,17 +44,17 @@ export const Footer = () => {
 						<div className="footer__wrapper__contacts__content__item">
 							<StyledText
 								size="p"
-								weight="800"
-								text="paragraph"
-								color="darkBlue"
+								weight="bold"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								Phone
 							</StyledText>
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								666 888 888
 							</StyledText>
@@ -57,17 +62,17 @@ export const Footer = () => {
 						<div className="footer__wrapper__contacts__content__item">
 							<StyledText
 								size="p"
-								weight="800"
-								text="paragraph"
-								color="darkBlue"
+								weight="bold"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								Address
 							</StyledText>
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								88 road, broklyn street, USA
 							</StyledText>
@@ -85,16 +90,21 @@ export const Footer = () => {
 						<div className="footer__wrapper__media__logo__wrapper">
 							<StyledText
 								size="h5"
-								weight="800"
-								text="heading"
-								color="darkBlue"
+								weight="bold"
+								family="headings"
+								color="headings"
 							>
 								Organick
 							</StyledText>
 						</div>
 					</div>
 					<div className="footer__wrapper__media__descr">
-						<StyledText size="p" weight="300" text="paragraph" color="darkBlue">
+						<StyledText
+							size="p"
+							weight="normal"
+							family="paragraphs"
+							color="paragraphs"
+						>
 							Simply dummy text of the printing and typesetting industry. Lorem
 							Ipsum simply dummy text of the printing
 						</StyledText>
@@ -128,16 +138,21 @@ export const Footer = () => {
 				</div>
 				<img src={verticalLine} alt="line" />
 				<div className="footer__wrapper__pages">
-					<StyledText size="h6" weight="800" text="heading" color="darkBlue">
+					<StyledText
+						size="h6"
+						weight="bold"
+						family="headings"
+						color="headings"
+					>
 						Utility Pages
 					</StyledText>
 					<div className="footer__wrapper__pages__content">
 						<div className="footer__wrapper__pages__content__item">
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								Style Guide
 							</StyledText>
@@ -145,9 +160,9 @@ export const Footer = () => {
 						<div className="footer__wrapper__pages__content__item">
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								404 Not Found
 							</StyledText>
@@ -155,9 +170,9 @@ export const Footer = () => {
 						<div className="footer__wrapper__pages__content__item">
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								Password Protected
 							</StyledText>
@@ -165,9 +180,9 @@ export const Footer = () => {
 						<div className="footer__wrapper__pages__content__item">
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								Licences
 							</StyledText>
@@ -175,9 +190,9 @@ export const Footer = () => {
 						<div className="footer__wrapper__pages__content__item">
 							<StyledText
 								size="p"
-								weight="500"
-								text="paragraph"
-								color="darkBlue"
+								weight="medium"
+								family="paragraphs"
+								color="paragraphs"
 							>
 								Changelog
 							</StyledText>
@@ -192,17 +207,37 @@ export const Footer = () => {
 					alt="line"
 				/>
 				<div className="footer__copyrights__content">
-					<StyledText size="p" weight="300" text="paragraph" color="darkBlue">
+					<StyledText
+						size="p"
+						weight="medium"
+						family="paragraphs"
+						color="paragraphs"
+					>
 						Copyright ©{" "}
-						<StyledText size="p" weight="600" text="paragraph" color="darkBlue">
+						<StyledText
+							size="p"
+							weight="semiBold"
+							family="paragraphs"
+							color="paragraphs"
+						>
 							Organick
 						</StyledText>{" "}
 						| Designed by{" "}
-						<StyledText size="p" weight="600" text="paragraph" color="darkBlue">
+						<StyledText
+							size="p"
+							weight="semiBold"
+							family="paragraphs"
+							color="paragraphs"
+						>
 							VictorFlow
 						</StyledText>{" "}
 						Templates - Powered by{" "}
-						<StyledText size="p" weight="600" text="paragraph" color="darkBlue">
+						<StyledText
+							size="p"
+							weight="semiBold"
+							family="paragraphs"
+							color="paragraphs"
+						>
 							Webflow
 						</StyledText>
 					</StyledText>

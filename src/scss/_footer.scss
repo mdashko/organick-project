@@ -13,7 +13,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: flex-end;
-			margin: 0 1em;
+			margin: 0 1.5em;
 			&__content {
 				display: flex;
 				flex-direction: column;
@@ -44,6 +44,7 @@
 			}
 			&__descr {
 				text-align: center;
+				margin: 1.5em 0;
 			}
 			&__links {
 				display: flex;
@@ -57,7 +58,8 @@
 		&__pages {
 			display: flex;
 			flex-direction: column;
-			margin: 0 1em;
+			margin: 0 1.5em;
+
 			&__content {
 				margin: 1em 0;
 				display: flex;
