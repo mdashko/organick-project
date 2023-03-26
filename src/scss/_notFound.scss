@@ -1,0 +1,50 @@
+@use "_globals.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.notFound {
+	&__banner {
+		position: relative;
+		width: 100vw;
+		display: flex;
+		justify-content: flex-end;
+		&_background {
+			position: relative;
+			width: 100vw;
+		}
+		&__content {
+			position: absolute;
+			top: 15%;
+			right: 5%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			&__heading {
+				align-self: center;
+				margin: 0.5em 0;
+			}
+			&__wrapper {
+				@include margin-btn;
+			}
+		}
+	}
+	&__banner-responsive {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1066px) {
+	.notFound {
+		&__banner {
+			display: none;
+		}
+		&__banner-responsive {
+			display: flex;
+			flex-direction: column;
+			@include center-elements;
+			&__wrapper {
+				@include margin-btn;
+			}
+		}
+	}
+} ;

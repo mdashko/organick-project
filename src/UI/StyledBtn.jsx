@@ -1,17 +1,23 @@
 import React from "react";
-import { fontFamilies, colors, widthes } from "../constants";
+import { fontFamilies, colors } from "../constants";
 
-export const StyledBtn = ({ children, textClr, bgClr, borderClr, width }) => {
+export const StyledBtn = ({
+	textColor,
+	bgColor,
+	borderColor,
+	width = "12.5em",
+	height = "4em",
+	children,
+}) => {
 	return (
 		<button
 			style={{
-				margin: "2.5em 0",
-				width: widthes[width],
-				height: "4em",
-				border: `1em solid ${colors[borderClr]}`,
+				width: width,
+				height: height,
+				border: `1px solid ${colors[borderColor]}`,
 				borderRadius: "1em",
-				backgroundColor: colors[bgClr],
-				color: colors[textClr],
+				backgroundColor: colors[bgColor],
+				color: colors[textColor],
 				fontFamily: fontFamilies["buttons"],
 			}}
 		>

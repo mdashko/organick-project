@@ -1,13 +1,7 @@
 import React from "react";
 import "../../scss/App.scss";
-import Logo from "../../images/logo.svg";
-import instagramIcon from "../../images/instagramIcon.svg";
-import facebookIcon from "../../images/facebookIcon.svg";
-import twitterIcon from "../../images/twitterIcon.svg";
-import pinterestIcon from "../../images/pinterestIcon.svg";
-import verticalLine from "../../images/line.svg";
-import horizontalLine from "../../images/line2.svg";
 import { StyledText } from "../../UI/StyledText";
+import {images} from "../../images/index.js";
 
 export const Footer = () => {
 	return (
@@ -79,12 +73,12 @@ export const Footer = () => {
 						</div>
 					</div>
 				</div>
-				<img src={verticalLine} alt="line" />
+				<img src={images.verticalLine} alt="line" />
 				<div className="footer__wrapper__media">
 					<div className="footer__wrapper__media__logo">
 						<img
 							className="footer__wrapper__media__logo_img"
-							src={Logo}
+							src={images.Logo}
 							alt="Logo"
 						/>
 						<div className="footer__wrapper__media__logo__wrapper">
@@ -114,29 +108,29 @@ export const Footer = () => {
 							className="footer__wrapper__media__links_item"
 							href="https://www.instagram.com/"
 						>
-							<img src={instagramIcon} alt="instagram icon" />
+							<img src={images.instagramIcon} alt="instagram icon" />
 						</a>
 						<a
 							className="footer__wrapper__media__links_item"
 							href="https://www.facebook.com"
 						>
-							<img src={facebookIcon} alt="facebook icon" />
+							<img src={images.facebookIcon} alt="facebook icon" />
 						</a>
 						<a
 							className="footer__wrapper__media__links_item"
 							href="https://twitter.com"
 						>
-							<img src={twitterIcon} alt="twitter icon" />
+							<img src={images.twitterIcon} alt="twitter icon" />
 						</a>
 						<a
 							className="footer__wrapper__media__links_item"
 							href="https://www.pinterest.com/"
 						>
-							<img src={pinterestIcon} alt="pinterest icon" />
+							<img src={images.pinterestIcon} alt="pinterest icon" />
 						</a>
 					</div>
 				</div>
-				<img src={verticalLine} alt="line" />
+				<img src={images.verticalLine} alt="line" />
 				<div className="footer__wrapper__pages">
 					<StyledText
 						size="h6"
@@ -203,7 +197,7 @@ export const Footer = () => {
 			<div className="footer__copyrights">
 				<img
 					className="footer__copyrights_line"
-					src={horizontalLine}
+					src={images.horizontalLine}
 					alt="line"
 				/>
 				<div className="footer__copyrights__content">

@@ -1,5 +1,6 @@
 @use "_globals.scss";
 @import "_variables.scss";
+@import "_mixins.scss";
 
 .header {
 	display: flex;
@@ -64,6 +65,17 @@
 				left: 45%;
 				text-align: center;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 984px) {
+	.header {
+		flex-direction: column;
+		@include center-elements;
+		&__inputs {
+			align-self: center;
+			justify-self: center;
 		}
 	}
 }

@@ -3,6 +3,10 @@
 	margin: 0;
 }
 
+body {
+	overflow-x: hidden !important;
+}
+
 a {
 	text-decoration: none;
 	cursor: pointer;
