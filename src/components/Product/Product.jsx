@@ -2,9 +2,9 @@ import React from "react";
 import "../../scss/App.scss";
 import { colors } from "../../constants";
 import { StyledText } from "../../UI/StyledText";
-import {images} from "../../images/index.js";
+import { images } from "../../images/index.js";
 
-export const Product = ({ children, img, type, price, oldPrice = "" }) => {
+export const Product = ({ img, type, price, oldPrice = "", rating, description="", children }) => {
 	return (
 		<div
 			style={{
@@ -107,8 +107,8 @@ export const Product = ({ children, img, type, price, oldPrice = "" }) => {
 						style={{
 							width: "20%",
 						}}
-						src={images.stars}
-						alt="stars"
+						src={rating}
+						alt="rating"
 					/>
 				</div>
 			</div>

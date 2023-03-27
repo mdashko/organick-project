@@ -1,5 +1,6 @@
 import React from "react";
 import { Header } from "../components/Header/Header";
+import { Modal } from "../components/Modal/Modal"; //here
 import { Footer } from "../components/Footer/Footer";
 import { StyledText } from "../UI/StyledText";
 import { StyledBtn } from "../UI/StyledBtn";
@@ -9,6 +10,17 @@ import { images } from "../images/index.js";
 export const Main = () => {
 	return (
 		<>
+			<Modal>
+				<Product
+					img={images.product2}
+					type="Vegetable"
+					price="$12.00"
+					oldPrice="$20.00"
+					rating={images.stars}
+				>
+					Brown Hazelnut
+				</Product>
+			</Modal>
 			<Header />
 			<div className="main">
 				<section className="main__banner">
@@ -220,7 +232,27 @@ export const Main = () => {
 						</div>
 					</div>
 				</section>
-				{/* PRODUCT SECTION HERE */}
+				<section className="main__products">
+					<div className="main__products__heading">
+						<StyledText
+							size="h5"
+							weight="normal"
+							family="preHeadings"
+							color="preHeadings"
+						>
+							Categories
+						</StyledText>
+						<StyledText
+							size="h3"
+							weight="bold"
+							family="headings"
+							color="headings"
+						>
+							Our Products
+						</StyledText>
+					</div>
+					<div className="main__products__container"></div>
+				</section>
 				<section className="main__testimonial">
 					<img
 						className="main__testimonial_img"
@@ -396,6 +428,7 @@ export const Main = () => {
 							type="Vegetable"
 							price="$13.00"
 							oldPrice="$20.00"
+							rating={images.stars}
 						>
 							Mung Bean
 						</Product>
@@ -404,6 +437,7 @@ export const Main = () => {
 							type="Vegetable"
 							price="$12.00"
 							oldPrice="$20.00"
+							rating={images.stars}
 						>
 							Brown Hazelnut
 						</Product>
@@ -412,6 +446,7 @@ export const Main = () => {
 							type="Vegetable"
 							price="$17.00"
 							oldPrice="$20.00"
+							rating={images.stars}
 						>
 							Onion
 						</Product>
@@ -420,6 +455,7 @@ export const Main = () => {
 							type="Vegetable"
 							price="$18.00"
 							oldPrice="$20.00"
+							rating={images.stars}
 						>
 							Cabbage
 						</Product>

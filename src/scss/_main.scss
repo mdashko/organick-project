@@ -91,6 +91,19 @@
 			}
 		}
 	}
+	&__products {
+		display: flex;
+		flex-direction: column;
+		@include center-elements;
+		&__heading {
+			display: flex;
+			flex-direction: column;
+			@include center-elements;
+		}
+		&__container {
+			padding: 2.5em;
+		}
+	}
 	&__testimonial {
 		position: relative;
 		max-width: 100vw;
