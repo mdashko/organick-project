@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Header } from "../components/Header/Header";
 import { Modal } from "../components/Modal/Modal"; //here
 import { Footer } from "../components/Footer/Footer";
@@ -6,20 +6,23 @@ import { StyledText } from "../UI/StyledText";
 import { StyledBtn } from "../UI/StyledBtn";
 import { Product } from "../components/Product/Product";
 import { images } from "../images/index.js";
+import { ProductModal } from "../components/ProductModal/ProductModal";
+
+
 
 export const Main = () => {
 	return (
 		<>
 			<Modal>
-				<Product
-					img={images.product2}
+				<ProductModal
+					img={images.product3}
+					name="Brown Hazelnut"
 					type="Vegetable"
 					price="$12.00"
 					oldPrice="$20.00"
 					rating={images.stars}
-				>
-					Brown Hazelnut
-				</Product>
+					description="lorem ipsum"
+				/>
 			</Modal>
 			<Header />
 			<div className="main">
@@ -425,40 +428,36 @@ export const Main = () => {
 					<div className="main__offer__products">
 						<Product
 							img={images.product1}
+							name="Mung Bean"
 							type="Vegetable"
 							price="$13.00"
 							oldPrice="$20.00"
 							rating={images.stars}
-						>
-							Mung Bean
-						</Product>
+						/>
 						<Product
 							img={images.product2}
+							name="Brown Hazelnut"
 							type="Vegetable"
 							price="$12.00"
 							oldPrice="$20.00"
 							rating={images.stars}
-						>
-							Brown Hazelnut
-						</Product>
+						/>
 						<Product
 							img={images.product3}
+							name="Onion"
 							type="Vegetable"
 							price="$17.00"
 							oldPrice="$20.00"
 							rating={images.stars}
-						>
-							Onion
-						</Product>
+						/>
 						<Product
 							img={images.product4}
+							name="Cabbage"
 							type="Vegetable"
 							price="$18.00"
 							oldPrice="$20.00"
 							rating={images.stars}
-						>
-							Cabbage
-						</Product>
+						/>
 					</div>
 				</section>
 				<section className="main__eco-friendly">

@@ -29,6 +29,7 @@ export const colors = {
 	buttonTextWhite: "#fff",
 	buttonBorder: "#274c5b",
 	buttonBorderYellow: "#EFD372",
+	buttonLightBlue: "#EFF6F1",
 	productText: "#274c5b",
 	productTypeText: "#fff",
 	productClr: "#FFF",

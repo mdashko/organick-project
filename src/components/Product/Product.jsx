@@ -4,7 +4,7 @@ import { colors } from "../../constants";
 import { StyledText } from "../../UI/StyledText";
 import { images } from "../../images/index.js";
 
-export const Product = ({ img, type, price, oldPrice = "", rating, description="", children }) => {
+export const Product = ({ img, name, type, price, oldPrice = "", rating }) => {
 	return (
 		<div
 			style={{
@@ -45,7 +45,7 @@ export const Product = ({ img, type, price, oldPrice = "", rating, description="
 					height: "15em",
 				}}
 				src={img}
-				alt={children}
+				alt={name}
 			/>
 			<div
 				style={{
@@ -58,7 +58,7 @@ export const Product = ({ img, type, price, oldPrice = "", rating, description="
 					family="products"
 					color="productText"
 				>
-					{children}
+					{name}
 				</StyledText>
 				<img
 					style={{
