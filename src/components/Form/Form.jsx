@@ -3,7 +3,6 @@ import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledInput } from "../../UI/StyledInput";
 import { StyledBtn } from "../../UI/StyledBtn";
-import { name } from "file-loader";
 
 export const Form = () => {
 	const [fullName, setFullName] = useState("");
