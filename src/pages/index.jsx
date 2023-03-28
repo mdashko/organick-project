@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Main } from "./main";
-import { NotFound } from "./notFound";
+import { Main } from "./Main";
+import { NotFound } from "./NotFound";
 
 const Pages = () => {
 	return (

@@ -6,6 +6,7 @@ export const sizes = {
 	h5: "2em",
 	h6: "1.5em",
 	p: "0.9em",
+	errorText: "0.9em",
 };
 
 export const fontFamilies = {
@@ -14,6 +15,7 @@ export const fontFamilies = {
 	paragraphs: ["OpenSans", "sans-serif"],
 	buttons: ["Roboto", "sans-serif"],
 	products: ["Roboto", "sans-serif"],
+	form: ["Roboto", "sans-serif"],
 };
 
 export const colors = {
@@ -35,6 +37,10 @@ export const colors = {
 	productClr: "#FFF",
 	productTypeClr: "#274C5B",
 	productOldPriceClr: "#B8B8B8",
+	inputBorderClr: "#7EB693",
+	inputClr: "#fff",
+	formTextForm: "#274c5b",
+	errorClr: "#ff0000",
 };
 
 export const weights = {

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "../../scss/App.scss";
-//import { colors } from "../../constants";
 import { StyledText } from "../../UI/StyledText";
 import { StyledBtn } from "../../UI/StyledBtn";
-//import { images } from "../../images/index.js";
 
 
 

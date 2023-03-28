@@ -8,6 +8,7 @@ export const StyledBtn = ({
 	width = "12.5em",
 	height = "4em",
 	children,
+	onClick = "undefined",
 }) => {
 	return (
 		<button
@@ -20,8 +21,8 @@ export const StyledBtn = ({
 				color: colors[textColor],
 				fontFamily: fontFamilies["buttons"],
 			}}
+			onClick={onClick}
 		>
-			{" "}
 			{children}
 		</button>
 	);

@@ -1,0 +1,26 @@
+@use "_globals.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.form {
+	display: flex;
+	flex-direction: column;
+	@include center-elements;
+	padding: 1.5em;
+	width: 100%;
+	background-color: $formClr;
+	&__inputs-container {
+		display: flex;
+		margin: 0.9em 0;
+		div {
+			display: flex;
+			flex-direction: column;
+			margin: 0 1.5em;
+		}
+	}
+	&__btn-container {
+		display: flex;
+		justify-self: center;
+		// style={{borderColor: error ? "red" : "inherit"}}
+	}
+}

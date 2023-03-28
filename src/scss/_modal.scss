@@ -27,8 +27,19 @@
 				margin: 2.5em;
 			}
 		}
-		&__info {
-			align-items: center;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&__btns > * + * {
+			margin-left: 20px;
+		}
+		&__text {
+			width: 80%;
+			margin: 15px 0;
+			text-align: center;
 		}
 	}
 }
