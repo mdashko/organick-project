@@ -34,6 +34,7 @@ import horizontalLine from "./line2.svg";
 import cartBanner from "../images/cartBanner.svg";
 import notFoundBanner from "../images/notFoundBanner.svg";
 import notFoundErrorNum from "../images/404.svg";
+import confirmationBanner from "./confirmationBanner.webp";
 export const images = {
 	bannerImage,
 	bannerBackground,
@@ -71,4 +72,5 @@ export const images = {
 	cartBanner,
 	notFoundBanner,
 	notFoundErrorNum,
+	confirmationBanner,
 };

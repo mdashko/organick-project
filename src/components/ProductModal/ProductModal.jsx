@@ -23,7 +23,6 @@ export const ProductModal = ({
 			}}
 		>
 			<div
-				className="productModal__img-wrapper"
 				style={{ width: "400px", height: "380px", position: "relative" }}
 			>
 				<img

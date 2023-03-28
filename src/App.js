@@ -1,14 +1,13 @@
 import "./scss/App.scss";
 //import Pages from "./pages/Index";
-//import { Cart} from "./pages/Cart";
-import { Form } from "./components/Form/Form";
-import { StyledInput } from "./UI/StyledInput";
+import { Cart } from "./pages/Cart";
+//mport { Form } from "./components/Form/Form";
 
 function App() {
 	return (
 		<div className="App">
 			{/* <Pages /> */}
-			<Form/>
+			<Cart />
 		</div>
 	);
 }

@@ -10,10 +10,13 @@ export const Form = () => {
 	const [address, setAddress] = useState("");
 	const [phone, setPhone] = useState(0);
 	const [message, setMessage] = useState("");
+	const [errorName, setErrorName] = useState(false);
+	const [errorEmail, setErrorEmail] = useState(false);
+	const [errorAddress, setErrorAddress] = useState(false);
+	const [errorPhone, setErrorPhone] = useState(false);
 
 	const nameRegex = /^[a-zA-Z\-]+$/;
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	const numberRegex = /^\d+$/;
 
 	const handleFullName = (event) => setFullName(event.target.value);
 	const handleEmail = (event) => setEmail(event.target.value);
@@ -22,7 +25,12 @@ export const Form = () => {
 	const handleMessage = (event) => setMessage(event.target.value);
 
 	const submitForm = () => {
-		if (fullName === "") {
+		setErrorName(!nameRegex.test(fullName));
+		setErrorEmail(!emailRegex.test(email));
+		setErrorAddress(!(address !== ""));
+		setErrorPhone(!(phone !== ""));
+		if (!errorName && !errorEmail && !errorAddress && !errorPhone) {
+			console.log("good");
 		}
 	};
 
@@ -37,9 +45,8 @@ export const Form = () => {
 						width="300px"
 						height="50px"
 						placeholder="Your Full Name"
-						required="true"
-						regex = {nameRegex}
-						value={fullName}
+						required={true}
+						error={errorName}
 						onChange={handleFullName}
 					/>
 				</div>
@@ -51,10 +58,9 @@ export const Form = () => {
 						width="300px"
 						height="50px"
 						placeholder="Your Email Address"
-						required="true"
+						required={true}
 						type="email"
-						regex = {emailRegex}
-						value={email}
+						error={errorEmail}
 						onChange={handleEmail}
 					/>
 				</div>
@@ -68,8 +74,8 @@ export const Form = () => {
 						width="300px"
 						height="50px"
 						placeholder="Your Address"
-						required="true"
-						value={address}
+						required={true}
+						error={errorAddress}
 						onChange={handleAddress}
 					/>
 				</div>
@@ -81,10 +87,9 @@ export const Form = () => {
 						width="300px"
 						height="50px"
 						placeholder="Enter your phone"
-						required="true"
-						type="number"
-						regex = {numberRegex}
-						value={phone}
+						required={true}
+						type="text"
+						error={errorPhone}
 						onChange={handlePhone}
 					/>
 				</div>

@@ -18,24 +18,4 @@
 			right: 50%;
 		}
 	}
-
-	&__cart {
-		display: flex;
-		flex-direction: column;
-		background-color: $cartClr;
-		width: auto;
-		height: 751px;
-		margin: 2em 0;
-		&__product {
-			display: flex;
-			justify-content: space-evenly;
-			padding: 2em 0;
-			&__img {
-				background-color: red;
-				width: 250px;
-				height: 200px;
-				border-radius: 30px;
-			}
-		}
-	}
 }

@@ -7,15 +7,9 @@ export const StyledInput = ({
 	placeholder,
 	type = "text",
 	required = false,
-	regex = "",
-	value,
+	error,
 	onChange,
 }) => {
-	const [error, setError] = useState(false);
-
-	const handleError = () =>
-		!(required && regex.test(value)) ? setError(true) : setError(false);
-
 	return (
 		<input
 			required={required}

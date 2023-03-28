@@ -1,0 +1,15 @@
+@use "_globals.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.confirmation {
+	display: flex;
+	flex-direction: column;
+	@include center-elements;
+	&__banner {
+		width: 100vw;
+		&_img {
+			width: 100vw;
+		}
+	}
+}
