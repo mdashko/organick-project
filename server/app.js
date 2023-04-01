@@ -14,7 +14,7 @@ app.use("/api", require("./routes"));
 const run = async () => {
 	try {
 		// mongodb
-		await mongoose.connect(MONGODB_URL);
+		// await mongoose.connect(MONGODB_URL);
 
 		// start server
 		app.listen(PORT, () => {

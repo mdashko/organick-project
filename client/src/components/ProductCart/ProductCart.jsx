@@ -3,7 +3,7 @@ import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledBtn } from "../../UI/StyledBtn";
 
-export const ProductCart = ({ img, name, price, newPrice = "" }) => {
+export const ProductCart = ({ id, img, name, price, newPrice = "" }) => {
 	return (
 		<div className="productCart">
 			<div className="productCart__wrapper">

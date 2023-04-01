@@ -15,7 +15,8 @@ export const Cart = () => {
 		setIsFormOpen(true);
 		setIsButtonVisible(false);
 	};
-
+// запит на локалСторедж , куди ти перед тим записала свої продукти.
+// Отримуєш відти продукти відображаєш - передаєш у форму
 	return (
 		<>
 			<Header />

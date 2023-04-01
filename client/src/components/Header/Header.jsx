@@ -1,9 +1,10 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useContext } from "react";
 import "../../scss/App.scss";
 import { pagesLinks } from "../../constants";
 import { images } from "../../images/index.js";
 import { CartButton } from "../../UI/CartButton";
 import { SearchBar } from "../../UI/SearchBar";
+import { MainContext } from "../CartContext";
 
 export const Header = () => {
 	const [showMenu, setShownMenu] = useState(false);
@@ -13,6 +14,8 @@ export const Header = () => {
 		setShownMenu((prev) => !prev);
 	});
 
+	const { products } = useContext(MainContext);
+	console.log(products);
 	return (
 		<div className="header">
 			<div className="header__logo">

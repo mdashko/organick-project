@@ -4,9 +4,9 @@ import { colors } from "../../constants";
 import { images } from "../../images/index.js";
 import { StyledText } from "../../UI/StyledText";
 import { ProductModal } from "../ProductModal/ProductModal";
+import { Modal } from "../Modal/Modal";
 
 export const Product = ({
-	id,
 	image,
 	name,
 	type,
@@ -14,126 +14,132 @@ export const Product = ({
 	price,
 	newPrice = "",
 }) => {
-	const [isProductClicked, setIsProductClicked] = useState(false);
-	
+	const [modalIsVisible, setIsVisible] = useState(false);
 
-	const productClicked = () => {
-		setIsProductClicked(true);
+	const onClose = () => {
+		setIsVisible(false);
+	};
+	const onOpen = () => {
+		setIsVisible(true);
 	};
 
-	const showModal = () => isProductClicked && <ProductModal isVisible={true} />;
-
-	ShowModal();
-
 	return (
-		<div
-			onClick={productClicked}
-			style={{
-				borderRadius: "2em",
-				backgroundColor: colors["productClr"],
-				width: "19em",
-				height: "24em",
-				display: "flex",
-				flexDirection: "column",
-				margin: "0.5em",
-				cursor: "pointer",
-			}}
-		>
+		<>
+			<Modal isVisible={modalIsVisible} onClose={onClose}>
+				<ProductModal />
+				{"передай сюди пропси бляха муха "}
+			</Modal>
 			<div
+				onClick={onOpen}
 				style={{
-					borderRadius: "0.5em",
-					width: "6em",
-					height: "2em",
-					backgroundColor: colors["productTypeClr"],
-					backgroundBlendMode: "multiply",
-					margin: "1em",
+					borderRadius: "2em",
+					backgroundColor: colors["productClr"],
+					width: "19em",
+					height: "24em",
 					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
+					flexDirection: "column",
+					margin: "0.5em",
+					cursor: "pointer",
 				}}
 			>
-				<StyledText
-					size="p"
-					weight="thin"
-					family="products"
-					color="productTypeText"
+				<div
+					style={{
+						borderRadius: "0.5em",
+						width: "6em",
+						height: "2em",
+						backgroundColor: colors["productTypeClr"],
+						backgroundBlendMode: "multiply",
+						margin: "1em",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
 				>
-					{type}
-				</StyledText>
-			</div>
-			<img
-				style={{
-					width: "auto",
-					height: "15em",
-				}}
-				src={image}
-				alt={name}
-			/>
-			<div
-				style={{
-					margin: "1em",
-				}}
-			>
-				<StyledText
-					size="p"
-					weight="thin"
-					family="products"
-					color="productText"
-				>
-					{name}
-				</StyledText>
+					<StyledText
+						size="p"
+						weight="thin"
+						family="products"
+						color="productTypeText"
+					>
+						{type}
+					</StyledText>
+				</div>
 				<img
 					style={{
-						alignSelf: "center",
+						width: "auto",
+						height: "15em",
 					}}
-					src={images.productLine}
-					alt="line"
+					src={image}
+					alt={name}
 				/>
 				<div
 					style={{
-						display: "flex",
-						justifyContent: "space-between",
+						margin: "1em",
 					}}
 				>
+					<StyledText
+						size="p"
+						weight="thin"
+						family="products"
+						color="productText"
+					>
+						{name}
+					</StyledText>
+					<img
+						style={{
+							alignSelf: "center",
+						}}
+						src={images.productLine}
+						alt="line"
+					/>
 					<div
 						style={{
 							display: "flex",
 							justifyContent: "space-between",
 						}}
 					>
-						<span
+						<div
 							style={{
-								textDecoration: "line-through",
-								color: colors["productOldPriceClr"],
+								display: "flex",
+								justifyContent: "space-between",
 							}}
 						>
-							<StyledText
-								size="p"
-								weight="thin"
-								family="products"
-								color="productOldPriceClr"
+							<span
+								style={{
+									textDecoration: `${newPrice ? "line-throught" : "none"}`,
+									color: colors["productOldPriceClr"],
+								}}
 							>
-								{newPrice !== "" ? price : ""}
-							</StyledText>
-						</span>
-						<StyledText
-							size="p"
-							weight="thin"
-							family="products"
-							color="productText"
-						>
-							{newPrice !== "" ? newPrice : price}
-						</StyledText>
+								<StyledText
+									size="p"
+									weight="thin"
+									family="products"
+									color="productOldPriceClr"
+								>
+									{price}
+								</StyledText>
+							</span>
+							{newPrice && (
+								<StyledText
+									size="p"
+									weight="thin"
+									family="products"
+									color="productText"
+								>
+									{newPrice}
+								</StyledText>
+							)}
+						</div>
+						<img
+							style={{
+								width: "20%",
+							}}
+							src={rating}
+							alt="rating"
+						/>
 					</div>
-					<img
-						style={{
-							width: "20%",
-						}}
-						src={rating}
-						alt="rating"
-					/>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };

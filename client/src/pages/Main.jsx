@@ -1,29 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { Header } from "../components/Header/Header";
-import { Modal } from "../components/Modal/Modal"; //here
 import { Footer } from "../components/Footer/Footer";
 import { StyledText } from "../UI/StyledText";
 import { StyledBtn } from "../UI/StyledBtn";
 import { Product } from "../components/Product/Product";
 import { images } from "../images/index.js";
-import { ProductModal } from "../components/ProductModal/ProductModal";
 import { Catalog } from "../components/Catalog/Catalog";
+import { MainProvider } from "../components/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export const Main = () => {
+	const navigate = useNavigate();
+	const navigateToCart = () => {
+		navigate("/Cart");
+	};
 	return (
-		<>
-			{/* <Modal>
-				<ProductModal
-					img={"https://drive.google.com/uc?export=view&id=1vvKM0w9bQn2ErxkBm8fZWZr_HHYjQFe0"}
-					name="Brown Hazelnut"
-					type="Vegetable"
-					price="$20.00"
-					//newPrice="$12.00"
-					rating={images.stars}
-					description="lorem ipsum"
-				/>
-			</Modal> */}
+		<MainProvider>
 			<Header />
+			<Catalog />
 			<div className="main">
 				<section className="main__banner">
 					<img
@@ -1260,6 +1254,6 @@ export const Main = () => {
 				</section>
 			</div>
 			<Footer />
-		</>
+		</MainProvider>
 	);
 };

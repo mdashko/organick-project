@@ -32,17 +32,22 @@ export const Form = () => {
 		if (!errorName && !errorEmail && !errorAddress && !errorPhone) {
 			fetch("http://localhost:3000/api/orders/create", {
 				method: "POST",
-				headers: { 'Content-Type': 'application/json' },
+				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
 					fullName,
 					email,
 					address,
 					phone,
 					message,
-				//	products: products.map((el) => ({ productId: el.id, quantity: el.quantity })),
-				//	totalPrice: products.map(el => el.newPrice).reduce((prev, next) => prev + next, 0)
-				})
-			}).then(res => console.log("good"));
+					// products: products.map((el) => ({ productId: el.id, quantity: el.quantity })),
+					// totalPrice: products.reduce((prev, next) => {
+					// 	if(prev.newPrice){
+					// 		return prev.newPrice*kilkist;
+					// 	}
+					// 	// return prev.price*kilkist
+					// }, 0)
+				}),
+			}).then((res) => console.log("good"));
 		}
 	};
 
