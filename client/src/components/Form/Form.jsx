@@ -30,7 +30,7 @@ export const Form = () => {
 		setErrorAddress(!(address !== ""));
 		setErrorPhone(!(phone !== ""));
 		if (!errorName && !errorEmail && !errorAddress && !errorPhone) {
-			fetch("http://localhost:3000/api/orders/create", {
+			fetch("http://localhost:5000/api/orders/create", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
@@ -39,13 +39,16 @@ export const Form = () => {
 					address,
 					phone,
 					message,
-					// products: products.map((el) => ({ productId: el.id, quantity: el.quantity })),
-					// totalPrice: products.reduce((prev, next) => {
-					// 	if(prev.newPrice){
-					// 		return prev.newPrice*kilkist;
-					// 	}
-					// 	// return prev.price*kilkist
-					// }, 0)
+					products: products.map((el) => ({
+						productId: el.id,
+						quantity: el.quantity,
+					})),
+					totalPrice: products.reduce((prev, next) => {
+						if (prev.newPrice) {
+							return prev.newPrice * prev.quantity;
+						}
+						return prev.price * prev.quantity;
+					}, 0),
 				}),
 			}).then((res) => console.log("good"));
 		}

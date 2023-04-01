@@ -35,7 +35,18 @@ export const Catalog = () => {
 	// newPrice = "",
 	return (
 		<div className="catalog">
-			<div className="catalog__product-container"></div>
+			<div className="catalog__product-container">
+				{products.map((product) => (
+					<Product
+						img={product.image}
+						name={product.name}
+						type={product.type}
+						rating={product.rating}
+						price={product.price}
+						newPrice={product.newPrice}
+					/>
+				))}
+			</div>
 			<div className="catalog__btns-container">
 				{products.map((i) => (
 					<Product />

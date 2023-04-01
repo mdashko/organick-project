@@ -2,7 +2,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const express = require("express");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const MONGODB_URL =
 	"mongodb+srv://martadashko:1234@cluster0.l7za2ki.mongodb.net/organick-db";
 
@@ -14,7 +14,7 @@ app.use("/api", require("./routes"));
 const run = async () => {
 	try {
 		// mongodb
-		// await mongoose.connect(MONGODB_URL);
+		 await mongoose.connect(MONGODB_URL);
 
 		// start server
 		app.listen(PORT, () => {
