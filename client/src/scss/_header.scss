@@ -1,0 +1,98 @@
+@use "_globals.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.header {
+	display: flex;
+	justify-content: space-around;
+	padding: 2.5%;
+	font-family: $headerFonts;
+	color: $headerTextClr;
+	background-color: $headerClr;
+	&__logo {
+		display: flex;
+		justify-content: baseline;
+		font-size: 1.5em;
+		&_text {
+			margin: 0.5em;
+		}
+	}
+	&__navbar {
+		display: flex;
+		&_item {
+			color: $headerTextClr;
+			margin: 1em;
+			&:hover {
+				color: $hoverClr;
+				transition: all 0.5s ease-out;
+			}
+		}
+	}
+	&__inputs {
+		display: flex;
+		align-self: flex-start;
+	}
+	&__burgerMenu {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 984px) {
+	.header {
+		flex-direction: column;
+		@include center-elements;
+		&__inputs {
+			align-self: center;
+			justify-self: center;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.header__navbar {
+		display: none;
+	}
+	.header__navbar__mobile {
+		display: block;
+	}
+	.header__burgerMenu {
+		display: block;
+		margin: 0.5em 0.9em 0 0;
+	}
+	.header__logo {
+		font-size: 1em;
+		&_text {
+			margin: 0.5em;
+		}
+		padding: 0.5em;
+	}
+	.header__logo_logo {
+		width: 2.5em;
+		height: 2.5em;
+	}
+	.header {
+		padding: 0;
+		flex-direction: row;
+		position: relative;
+		justify-content: space-between;
+	}
+	.header__navbar__mobile {
+		z-index: 10;
+		padding: 0.5em;
+		display: flex;
+		flex-direction: column;
+		background-color: $headerClr;
+		position: absolute;
+		width: 100%;
+		top: 0;
+	}
+	.header_burgerMenuActive {
+		z-index: 12;
+		position: absolute;
+		top: 0.5em;
+		right: 0.5em;
+	}
+	.header__inputs {
+		display: none;
+	}
+}

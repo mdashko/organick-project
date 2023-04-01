@@ -1,0 +1,14 @@
+@use "_globals.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.catalog {
+	display: flex;
+	flex-direction: column;
+	&__product-container {
+		display: flex;
+		padding: 2.5em;
+		flex-wrap: wrap;
+		@include center-elements;
+	}
+}

@@ -1,0 +1,56 @@
+@use "_globals.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.cart {
+	&__banner {
+		position: relative;
+		width: 100vw;
+		&__background {
+			position: relative;
+			width: 100vw;
+		}
+		&__name-wrapper {
+			position: absolute;
+			top: 50%;
+			bottom: 50%;
+			left: 50%;
+			right: 50%;
+		}
+	}
+	&__cart {
+		display: flex;
+		flex-direction: column;
+		@include center-elements;
+		margin: 2em 0;
+		background-color: $cartClr;
+		&__products-container {
+			&__product {
+				display: flex;
+			}
+		}
+		&__order-btn {
+			display: flex;
+			padding: 1em 0;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.cart {
+		&__banner {
+			&__background {
+				&__name-wrapper {
+					@include center-elements;
+				}
+			}
+		}
+		// &__cart {
+		// 	&__products-container {
+		// 		&__product {
+		// 			display: none;
+		// 		}
+		// 	}
+		// }
+	}
+}

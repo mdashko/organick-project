@@ -1,0 +1,44 @@
+@use "_globals.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.wrapper {
+	z-index: 10;
+	width: 100vh;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	display: flex;
+	@include center-elements;
+	background-color: rgba(0, 0, 0, 0.5);
+	&__container {
+		z-index: 11;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		opacity: 1;
+		width: 62.5em;
+		height: 45em;
+		background-color: #fff;
+		&__product {
+			display: flex;
+			&__btn {
+				margin: 2.5em;
+			}
+		}
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&__btns > * + * {
+		margin-left: 1.25em;
+		}
+		&__text {
+			width: 80%;
+			margin: 1em 0;
+			text-align: center;
+		}
+	}
+}

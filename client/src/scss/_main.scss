@@ -1,0 +1,705 @@
+@use "_globals.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.main {
+	background-color: $mainClr;
+	&__banner {
+		position: relative;
+		display: flex;
+		justify-content: baseline;
+		&_background {
+			position: absolute;
+			max-width: 100vw;
+			z-index: 1;
+		}
+		&_img {
+			position: absolute;
+			max-width: 100vw;
+		}
+		&__container {
+			display: flex;
+			flex-direction: column;
+			width: 30%;
+			z-index: 2;
+			padding: 10em 3.5em;
+			&__wrapper {
+				@include margin-btn;
+			}
+		}
+		&__container-responsive {
+			display: none;
+			flex-direction: column;
+			width: 30%;
+			z-index: 2;
+			padding: 10em 3.5em;
+			&__container-responsive__wrapper {
+				@include margin-btn;
+			}
+		}
+		&__container-mobile {
+			display: none;
+			flex-direction: column;
+			width: 30%;
+			z-index: 2;
+			padding: 10em 3.5em;
+			&__container-mobile__wrapper {
+				@include margin-btn;
+			}
+		}
+	}
+	&__offer-banner {
+		display: flex;
+		justify-content: center;
+		padding: 10em 0;
+		div {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			img {
+				position: relative;
+				width: 30em;
+				margin: 0 0.5em;
+			}
+			div {
+				position: absolute;
+				top: 30%;
+				left: 5%;
+				width: 43%;
+			}
+		}
+	}
+	&__offer-banner-mobile {
+		display: none;
+	}
+	&__about-us {
+		display: flex;
+		justify-content: space-around;
+		background-color: $aboutUsSectionClr;
+		&_img {
+			width: 45%;
+		}
+		&__content {
+			width: 35%;
+			margin: 5em 0;
+			display: flex;
+			flex-direction: column;
+			&__points {
+				margin: 1em 0;
+				&__point {
+					display: flex;
+					margin: 1em 0 0.5em;
+					&_img {
+						width: 10%;
+						margin-right: 1em;
+					}
+					&__content {
+						display: flex;
+						flex-direction: column;
+					}
+				}
+			}
+			&__wrapper {
+				@include margin-btn;
+			}
+		}
+	}
+	&__products {
+		display: flex;
+		flex-direction: column;
+		@include center-elements;
+		&__heading {
+			display: flex;
+			flex-direction: column;
+			@include center-elements;
+		}
+		
+	}
+	&__testimonial {
+		position: relative;
+		max-width: 100vw;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		&_img {
+			position: relative;
+			max-width: 100vw;
+		}
+		&__content {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			@include center-elements;
+			&__container {
+				display: flex;
+				flex-direction: column;
+				width: 65%;
+				&_img {
+					align-self: center;
+					width: 15%;
+					margin: 2.5em 0 0.5em;
+				}
+				&_rating {
+					align-self: center;
+					width: 15%;
+					margin: 1em 0;
+				}
+				&_nav {
+					width: 5%;
+					align-self: center;
+					margin: 1em 0;
+				}
+			}
+			&__achivements {
+				display: flex;
+				@include center-elements;
+				&__outer {
+					width: 12.5em;
+					height: 12.5em;
+					border-radius: 50%;
+					margin: 0 0.5em;
+					background-color: $outerCircleClr;
+					display: flex;
+					@include center-elements;
+				}
+				&__inner {
+					display: flex;
+					flex-direction: column;
+					@include center-elements;
+					width: 11em;
+					height: 11em;
+					border-radius: 50%;
+					border: 5px solid #fff;
+					background-color: #f1f1f1;
+				}
+			}
+		}
+	}
+	&__testimonial-mobile {
+		display: none;
+	}
+	&__offer {
+		background-color: $offerSectionClr;
+		display: flex;
+		flex-direction: column;
+		@include center-elements;
+		padding: 2em;
+		&__content {
+			display: flex;
+			flex-direction: column;
+			align-self: flex-start;
+		}
+		&__products {
+			display: flex;
+			justify-content: space-evenly;
+		}
+	}
+	&__eco-friendly {
+		display: flex;
+		&__container {
+			width: 50%;
+			&_img {
+				width: 100%;
+			}
+		}
+		&__content-container {
+			position: relative;
+			width: 50%;
+			&__card {
+				position: absolute;
+				left: -10%;
+				top: 10%;
+				background-color: $ecoFriendlyCardClr;
+				border-radius: 2em;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 1.5em;
+				width: 80%;
+				height: auto;
+				&__wrapper-responsive {
+					display: none;
+				}
+				&__points {
+					margin: 1em 0;
+					&__point {
+						margin: 0.8em 0;
+						display: flex;
+						flex-direction: column;
+					}
+				}
+			}
+			&__card-mobile {
+				display: none;
+			}
+		}
+	}
+	&__gallery {
+		background-color: $gallerySectionClr;
+		display: flex;
+		justify-content: space-between;
+		padding: 5em 0;
+		&_img {
+			width: 25%;
+		}
+	}
+	&__news {
+		&__container {
+			padding: 7em 14em;
+			&__content {
+				display: flex;
+				justify-content: space-between;
+				&__headings {
+					width: 60%;
+					display: flex;
+					flex-direction: column;
+				}
+				&__wrapper {
+					align-self: flex-end;
+				}
+			}
+			&__imgs-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 2.5em 0;
+				&__img-container {
+					position: relative;
+					margin: 0 1em;
+					&_img {
+						position: relative;
+						width: 30em;
+					}
+					&_date {
+						position: absolute;
+						top: 5%;
+						left: 5%;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						border-radius: 50%;
+						background-color: $dateClr;
+						width: 5em;
+						height: 5em;
+					}
+				}
+				&__card {
+					position: absolute;
+					bottom: -15%;
+					left: 7%;
+					box-shadow: 0 1.5em 2em rgba(167, 167, 167, 0.25);
+					border-radius: 2em 2em 2em 2em;
+					width: 20em;
+					height: 12em;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					padding: 3em;
+					background-color: $newsSectionCardClr;
+					&__content {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						&__name {
+							display: flex;
+							img {
+								margin-right: 0.5em;
+							}
+						}
+						&__wrapper {
+							@include margin-btn;
+						}
+					}
+					&__content-mobile {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	&__newsletter {
+		position: relative;
+		display: flex;
+		padding: 2em 1.5em;
+		img {
+			position: relative;
+			width: 100%;
+		}
+		&__heading {
+			width: 30%;
+			position: absolute;
+			top: 35%;
+			left: 7%;
+		}
+		&__form {
+			position: absolute;
+			top: 35%;
+			right: 5%;
+			display: flex;
+			align-items: flex-start;
+			&_input {
+				border-radius: 1em;
+				width: 19em;
+				height: 5em;
+				padding: 0 1.5em;
+				border: none;
+				font-style: italic;
+			}
+			&__wrapper {
+				margin: 0 0.5em;
+				align-self: center;
+			}
+			&__wrapper-mobile {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1330px) and (min-width: 985px) {
+	.main {
+		&__banner {
+			&__container {
+				padding: 2em 3.5em;
+			}
+		}
+
+		&__offer-banner {
+			padding: 15.5em 0 5.5em;
+		}
+
+		&__offer {
+			&__products {
+				flex-wrap: wrap;
+			}
+		}
+
+		&__eco-friendly {
+			&__content-container {
+				&__card {
+					top: 2%;
+				}
+			}
+		}
+
+		&__news {
+			&__container {
+				&__imgs-container {
+					flex-direction: column;
+					&__img-container {
+						margin: 3.5em 0;
+					}
+				}
+			}
+		}
+
+		&__newsletter {
+			&__heading {
+				top: 25%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 984px) {
+	.main {
+		&__banner {
+			&__container {
+				display: none;
+			}
+			&__container-responsive {
+				display: flex;
+				padding: 5.5em;
+			}
+		}
+		&__offer-banner {
+			flex-direction: column;
+			align-items: center;
+			padding: 10.5em 0 2.5em;
+			div {
+				img {
+					margin: 0.5em 0;
+				}
+			}
+		}
+		&__offer-banner-mobile {
+			display: none;
+		}
+
+		&__testimonial {
+			&__content {
+				&__achivements {
+					display: none;
+				}
+			}
+		}
+
+		&__offer {
+			&__products {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+
+		&__eco-friendly {
+			&__content-container {
+				&__card {
+					top: 0;
+					padding: 0 1.5em;
+					&__wrapper {
+						display: none;
+					}
+					&__wrapper-responsive {
+						display: block;
+					}
+				}
+			}
+		}
+
+		&__gallery {
+			padding: 0;
+			padding-bottom: 1.5em;
+		}
+
+		&__gallery {
+			background-color: transparent;
+			flex-direction: column;
+			&_img {
+				width: 100%;
+			}
+		}
+
+		&__news {
+			&__container {
+				padding: 0;
+				&__content {
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					&__wrapper {
+						display: none;
+					}
+				}
+				&__imgs-container {
+					flex-direction: column;
+					margin: 0;
+					&__img-container {
+						margin: 3.5em 0;
+					}
+				}
+			}
+		}
+
+		&__newsletter {
+			padding: 1.5em 0;
+			&__heading {
+				display: none;
+			}
+			&__form {
+				left: 20%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.main {
+		&__banner {
+			&__container {
+				display: none;
+			}
+			&__container-responsive {
+				display: none;
+			}
+			&__container-mobile {
+				display: flex;
+				padding: 0.6em;
+			}
+		}
+		&__offer-banner {
+			display: none;
+		}
+		&__offer-banner-mobile {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			@include center-elements;
+			div {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				img {
+					position: relative;
+					width: 15em;
+					margin: 1em 0;
+				}
+				div {
+					position: absolute;
+					top: 30%;
+					left: 5%;
+					width: 43%;
+				}
+			}
+		}
+		&__about-us {
+			flex-direction: column;
+			&_img {
+				width: 100%;
+			}
+			&__content {
+				width: 100%;
+				padding: 0 0.2em;
+			}
+		}
+		//PRODUCT CATALOG HERE
+		&__testimonial {
+			display: none;
+		}
+		&__testimonial-mobile {
+			position: relative;
+			max-width: 100vw;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			&_img {
+				position: relative;
+				max-width: 100vw;
+			}
+			&__content {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				@include center-elements;
+				&__container {
+					display: flex;
+					flex-direction: column;
+					width: 65%;
+					&_img {
+						align-self: center;
+						width: 15%;
+					}
+					&_rating {
+						align-self: center;
+						width: 15%;
+					}
+					&_nav {
+						width: 5%;
+						align-self: center;
+					}
+				}
+				&__achivements {
+					display: none;
+				}
+			}
+		}
+		&__eco-friendly {
+			&__container {
+				width: 50%;
+				&_img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&__content-container {
+				&__card {
+					display: none;
+				}
+				&__card-mobile {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					padding: 0.5em;
+					width: 80%;
+					height: auto;
+					&__wrapper-responsive {
+						display: none;
+					}
+					&__points {
+						margin: 1em 0;
+						&__point {
+							margin: 0.8em 0;
+							display: flex;
+							flex-direction: column;
+						}
+					}
+				}
+			}
+		}
+		&__news {
+			&__container {
+				&__imgs-container {
+					&__img-container {
+						position: relative;
+						margin: 2em 1em;
+						&_img {
+							position: relative;
+							width: 20em;
+						}
+					}
+					&__card {
+						position: absolute;
+						bottom: -15%;
+						left: 4%;
+						box-shadow: 0 1.5em 2em rgba(167, 167, 167, 0.25);
+						border-radius: 2em 2em 2em 2em;
+						width: 12.5em;
+						height: 4em;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						padding: 3em;
+						background-color: $newsSectionCardClr;
+						&__content {
+							display: none;
+						}
+						&__content-mobile {
+							position: absolute;
+							top: 5%;
+							left: 5%;
+							display: flex;
+							flex-direction: column;
+							align-items: flex-start;
+							&__name {
+								display: flex;
+								img {
+									margin-right: 0.5em;
+								}
+							}
+							&__wrapper {
+								@include margin-btn;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__newsletter {
+			padding: 2em 1.5em;
+			img {
+				position: relative;
+				width: 90%;
+			}
+			&__form {
+				&_input {
+					border-radius: 1em;
+					width: 5em;
+					height: 1.5em;
+					padding: 0 1.5em;
+					border: none;
+					font-style: italic;
+				}
+				&__wrapper {
+					display: none;
+				}
+				&__wrapper-mobile {
+					display: block;
+				}
+			}
+		}
+	}
+}

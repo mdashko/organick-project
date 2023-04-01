@@ -1,0 +1,79 @@
+@use "_globals.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+
+.productCart {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 2.5em;
+		width: 800px;
+		&__content {
+			display: flex;
+			&__img-container {
+				width: 200px;
+				height: 150px;
+				&_img {
+					object-fit: cover;
+					background-blend-mode: multiply;
+					width: inherit;
+					height: inherit;
+					border-radius: 1em;
+				}
+			}
+			&__details-container {
+				width: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				&__name-container {
+					display: flex;
+					margin: 0 2.5em;
+					@include center-elements;
+				}
+				&__price-container {
+					text-decoration: line-through;
+					color: $productOldPriceClr;
+					margin: 0 0.5em;
+				}
+			}
+			&__quantity-container {
+				display: flex;
+				@include center-elements;
+				width: 25%;
+				&_quantity {
+					border: 0.1em solid #274c5b;
+					border-radius: 1em;
+					width: 6.5em;
+					height: 3.5em;
+					margin: 0 0.5em;
+					text-align: center;
+				}
+			}
+			&__btn-container {
+				display: flex;
+				justify-self: center;
+				align-items: center;
+			}
+		}
+		&__price-container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin: 0 5.5em;
+			&__price {
+				display: flex;
+				flex-direction: column;
+				align-self: flex-end;
+			}
+		}
+	}
+}
+
+@media sceen and (max-width: 900px) {
+	.productCart {
+		&__wrapper {
+			display: none;
+		}
+	}
+}
