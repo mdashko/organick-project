@@ -2,7 +2,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const express = require("express");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 const MONGODB_URL =
 	"mongodb+srv://martadashko:1234@cluster0.l7za2ki.mongodb.net/organick-db";
 

@@ -7,8 +7,8 @@ import { ProductCart } from "./components/ProductCart/ProductCart";
 function App() {
 	return (
 		<div className="App">
-			{/* <Pages />	 */}
-			<Cart />
+			<Pages />	
+			{/* <Cart /> */}
 		</div>
 	);
 }

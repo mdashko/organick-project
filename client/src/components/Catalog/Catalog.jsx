@@ -11,14 +11,14 @@ export const Catalog = () => {
 	const clickedLoadMore = () => setProductsPerView(products.length);
 	const clickedHideAll = () => setProductsPerView(8);
 
-	const SERVER = "http://localhost:3000";
+	const SERVER = "http://localhost:5001";
 	// винести в енв файл
 
 	const fetchProducts = () => {
 		axios
 			.get(`${SERVER}/api/products`)
 			.then((res) => {
-				setProducts(res.data.products.allProducts);
+				setProducts(res.data.data);
 			})
 			.catch((err) => {
 				console.log("Error: " + err);
@@ -26,31 +26,23 @@ export const Catalog = () => {
 	};
 
 	useEffect(() => fetchProducts(), []);
-	// id,
-	// image,
-	// name,
-	// type,
-	// rating,
-	// price,
-	// newPrice = "",
+	console.log(products);
 	return (
 		<div className="catalog">
 			<div className="catalog__product-container">
-				{products.map((product) => (
+				{products.map((product) => {
 					<Product
-						img={product.image}
+						image={product.image}
 						name={product.name}
 						type={product.type}
 						rating={product.rating}
 						price={product.price}
 						newPrice={product.newPrice}
-					/>
-				))}
+					/>;
+				})}
+				 
 			</div>
 			<div className="catalog__btns-container">
-				{products.map((i) => (
-					<Product />
-				))}
 				<div className="catalog__btns-container__load-more-btn">
 					<StyledBtn
 						textColor="buttonTextWhite"

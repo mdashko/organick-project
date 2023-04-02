@@ -22,13 +22,13 @@ export const Product = ({
 	const onOpen = () => {
 		setIsVisible(true);
 	};
-
+	console.log(image, name, type, rating, price, newPrice);
 	return (
 		<>
-			<Modal isVisible={modalIsVisible} onClose={onClose}>
+			{/* <Modal isVisible={modalIsVisible} onClose={onClose}>
 				<ProductModal />
 				{"передай сюди пропси бляха муха "}
-			</Modal>
+			</Modal> */}
 			<div
 				onClick={onOpen}
 				style={{

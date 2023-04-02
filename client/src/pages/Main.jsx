@@ -17,7 +17,6 @@ export const Main = () => {
 	return (
 		<MainProvider>
 			<Header />
-			<Catalog />
 			<div className="main">
 				<section className="main__banner">
 					<img
@@ -321,9 +320,9 @@ export const Main = () => {
 							Our Products
 						</StyledText>
 					</div>
-					{/* <Catalog /> */}
-					<div className="main__products__container">
-						<Product
+					<Catalog />
+					{/*<div className="main__products__container">
+						 <Product
 							image={
 								"https://drive.google.com/uc?export=view&id=1vvKM0w9bQn2ErxkBm8fZWZr_HHYjQFe0"
 							}
@@ -383,7 +382,7 @@ export const Main = () => {
 							price="$20.00"
 							newPrice="$17.00"
 						/>
-					</div>
+					</div> */}
 				</section>
 				<section className="main__testimonial">
 					<img
