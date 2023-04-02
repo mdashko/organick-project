@@ -1,0 +1,60 @@
+@use "_globals.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.productModal {
+	display: flex;
+	margin: 2.5em;
+	&__img-container {
+		width: 20em;
+		height: 20em;
+		position: relative;
+		&_img {
+			object-fit: cover;
+			mix-blend-mode: multiply;
+			width: inherit;
+			height: inherit;
+		}
+		&__type-wrapper {
+			border-radius: 0.5em;
+			width: 5em;
+			height: 1.6em;
+			background-color: $productTypeClr;
+			margin: 1em;
+			display: flex;
+			@include center-elements;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	&__details-container {
+		display: flex;
+		flex-direction: column;
+		align-self: center;
+		margin: 0 0.5em;
+		&_rating {
+			width: 20%;
+			margin: 0.5em 0;
+		}
+		&__price-container {
+			&_price {
+				margin-right: 0.2em;
+				text-decoration: line-through;
+				color: $productOldPriceClr;
+			}
+		}
+		&__description {
+			margin: 0.5em 0 1em;
+		}
+		&__quantity-container {
+			&_quantity {
+				border: 0.1em solid #274c5b;
+				border-radius: 1em;
+				width: 6.5em;
+				height: 3.5em;
+				margin: 0 0.5em;
+			}
+		}
+	}
+}

@@ -16,7 +16,7 @@ export const Main = () => {
 	};
 	return (
 		<MainProvider>
-			<Header />
+			<Header navigateToCart />
 			<div className="main">
 				<section className="main__banner">
 					<img
@@ -321,68 +321,6 @@ export const Main = () => {
 						</StyledText>
 					</div>
 					<Catalog />
-					{/*<div className="main__products__container">
-						 <Product
-							image={
-								"https://drive.google.com/uc?export=view&id=1vvKM0w9bQn2ErxkBm8fZWZr_HHYjQFe0"
-							}
-							name="Mung Bean"
-							type="Vegetable"
-							rating={
-								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
-							}
-							price="$20.00"
-							newPrice="$13.00"
-						/>
-						<Product
-							image={
-								"https://drive.google.com/uc?export=view&id=1cUPlIdbr5tH_4VyfqSSKRMlPhNWfb0XP"
-							}
-							name="Brown Hazelnut"
-							type="Vegetable"
-							rating={
-								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
-							}
-							price="$20.00"
-							newPrice="$12.00"
-						/>
-						<Product
-							image={
-								"https://drive.google.com/uc?export=view&id=1tbKBBVl59z0eq9ZwltJltqlnpIVOBQuz"
-							}
-							name="Onion"
-							type="Vegetable"
-							rating={
-								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
-							}
-							price="$20.00"
-							newPrice="$17.00"
-						/>
-						<Product
-							image={
-								"https://drive.google.com/uc?export=view&id=1Oeg-vmiq8dKAn1Ub5EmQVYJlvppw9Tyr"
-							}
-							name="Cabbage"
-							type="Vegetable"
-							rating={
-								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
-							}
-							price="$20.00"
-							newPrice="$17.00"
-						/>
-						<Product
-							image={
-								"https://drive.google.com/uc?export=view&id=1Oeg-vmiq8dKAn1Ub5EmQVYJlvppw9Tyr"
-							}
-							name="Cabbage"
-							type="Vegetable"
-							rating={
-								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
-							}
-							price="$20.00"
-							newPrice="$17.00"
-						/>
-					</div> */}
 				</section>
 				<section className="main__testimonial">
 					<img
@@ -713,8 +651,8 @@ export const Main = () => {
 							rating={
 								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
 							}
-							price="$20.00"
-							newPrice="$13.00"
+							price="20.00"
+							newPrice="13.00"
 						/>
 						<Product
 							image={
@@ -725,8 +663,8 @@ export const Main = () => {
 							rating={
 								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
 							}
-							price="$20.00"
-							newPrice="$12.00"
+							price="20.00"
+							newPrice="12.00"
 						/>
 						<Product
 							image={
@@ -737,8 +675,8 @@ export const Main = () => {
 							rating={
 								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
 							}
-							price="$20.00"
-							newPrice="$17.00"
+							price="20.00"
+							newPrice="17.00"
 						/>
 						<Product
 							image={
@@ -749,8 +687,8 @@ export const Main = () => {
 							rating={
 								"https://drive.google.com/uc?export=view&id=1k2ZCLRBd66U8s9OAdIDLBwN5PFejeoEi"
 							}
-							price="$20.00"
-							newPrice="$17.00"
+							price="20.00"
+							newPrice="17.00"
 						/>
 					</div>
 				</section>

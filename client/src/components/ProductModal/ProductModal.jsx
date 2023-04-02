@@ -6,52 +6,27 @@ import { StyledBtn } from "../../UI/StyledBtn";
 import { MainContext } from "../CartContext";
 
 export const ProductModal = ({
-	img,
+	image,
 	name,
 	type,
 	rating,
 	price,
 	newPrice = "",
 	description,
-	isVisible = false,
+	//isVisible = false,
 }) => {
 	const [quantity, setQuantity] = useState(0);
 	const { updateProducts } = useContext(MainContext);
 
 	return (
-		<div
-			className="productModal"
-			style={{
-				display: isVisible ? "flex" : "none",
-				margin: "2.5em",
-			}}
-		>
-			<div style={{ width: "25em", height: "24em", position: "relative" }}>
+		<div className="productModal">
+			<div className="productModal__img-container">
 				<img
-					style={{
-						objectFit: "cover",
-						backgroundBlendMode: "multiply",
-						width: "inherit",
-						height: "inherit",
-					}}
-					src={img}
+					className="productModal__img-container_img"
+					src={image}
 					alt={name}
 				/>
-				<div
-					style={{
-						borderRadius: "0.5em",
-						width: "5em",
-						height: "1.6em",
-						backgroundColor: colors["productTypeClr"],
-						margin: "1em",
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-						position: "absolute",
-						top: "0",
-						left: "0",
-					}}
-				>
+				<div className="productModal__img-container__type-wrapper">
 					<StyledText
 						size="p"
 						weight="thin"
@@ -62,13 +37,7 @@ export const ProductModal = ({
 					</StyledText>
 				</div>
 			</div>
-			<div
-				style={{
-					display: "flex",
-					flexDirection: "column",
-					alignSelf: "center",
-				}}
-			>
+			<div className="productModal__details-container">
 				<StyledText
 					size="h6"
 					weight="thin"
@@ -78,24 +47,19 @@ export const ProductModal = ({
 					{name}
 				</StyledText>
 				<img
-					style={{ width: "20%", margin: "0.5em 0" }}
+					className="productModal__details-container_rating"
 					src={rating}
 					alt="rating"
 				/>
-				<div>
-					<span
-						style={{
-							textDecoration: "line-through",
-							color: colors["productOldPriceClr"],
-						}}
-					>
+				<div className="productModal__details-container__price-container">
+					<span className="productModal__details-container__price-container_price">
 						<StyledText
 							size="p"
 							weight="thin"
 							family="products"
 							color="productOldPriceClr"
 						>
-							{newPrice !== "" ? price : ""}
+							{newPrice !== 0 && `$${price}`}
 						</StyledText>
 					</span>
 					<StyledText
@@ -104,10 +68,10 @@ export const ProductModal = ({
 						family="products"
 						color="productText"
 					>
-						{newPrice !== "" ? newPrice : price}
+						{newPrice === 0 ? `$${price}` : `$${newPrice}`}
 					</StyledText>
 				</div>
-				<div style={{ margin: "0.5em 0 1em" }}>
+				<div className="productModal__details-container__description">
 					<StyledText
 						size="p"
 						weight="thin"
@@ -117,7 +81,7 @@ export const ProductModal = ({
 						{description}
 					</StyledText>
 				</div>
-				<div>
+				<div className="productModal__details-container__quantity-container">
 					<StyledText
 						size="p"
 						weight="thin"
@@ -127,13 +91,7 @@ export const ProductModal = ({
 						Quantity:{" "}
 					</StyledText>
 					<input
-						style={{
-							border: "0.1em solid #274C5B",
-							borderRadius: "1em",
-							width: "6.5em",
-							height: "3.5em",
-							margin: "0 0.5em",
-						}}
+						className="productModal__details-container__quantity-container_quantity"
 						onChange={(e) => setQuantity(e.target.value)}
 						type="text"
 					/>

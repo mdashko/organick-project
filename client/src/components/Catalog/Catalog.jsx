@@ -7,9 +7,19 @@ import { StyledBtn } from "../../UI/StyledBtn";
 export const Catalog = () => {
 	const [products, setProducts] = useState([]);
 	const [productsPerView, setProductsPerView] = useState(8);
+	const [LoadMoreButton, setLoadMoreButton] = useState(true);
+	const [hideAllButton, setHideAllButton] = useState(false);
 
-	const clickedLoadMore = () => setProductsPerView(products.length);
-	const clickedHideAll = () => setProductsPerView(8);
+	const clickedLoadMore = () => {
+		setProductsPerView(products.length);
+		setLoadMoreButton(false);
+		setHideAllButton(true);
+	};
+	const clickedHideAll = () => {
+		setProductsPerView(8);
+		setLoadMoreButton(true);
+		setHideAllButton(false);
+	};
 
 	const SERVER = "http://localhost:5001";
 	// винести в енв файл
@@ -26,11 +36,11 @@ export const Catalog = () => {
 	};
 
 	useEffect(() => fetchProducts(), []);
-	console.log(products);
+
 	return (
 		<div className="catalog">
 			<div className="catalog__product-container">
-				{products.map((product) => {
+				{products.slice(0, productsPerView).map((product) => (
 					<Product
 						image={product.image}
 						name={product.name}
@@ -38,31 +48,35 @@ export const Catalog = () => {
 						rating={product.rating}
 						price={product.price}
 						newPrice={product.newPrice}
-					/>;
-				})}
-				 
+						description={product.description}
+					/>
+				))}
 			</div>
 			<div className="catalog__btns-container">
-				<div className="catalog__btns-container__load-more-btn">
-					<StyledBtn
-						textColor="buttonTextWhite"
-						bgColor="buttons"
-						borderColor="buttonBorder"
-						onClick={clickedLoadMore}
-					>
-						Load More
-					</StyledBtn>
-				</div>
-				<div className="catalog__btns-container__hide-all-btn">
-					<StyledBtn
-						textColor="buttonTextWhite"
-						bgColor="buttons"
-						borderColor="buttonBorder"
-						onClick={clickedHideAll}
-					>
-						Hide All
-					</StyledBtn>
-				</div>
+				{LoadMoreButton && (
+					<div className="catalog__btns-container__load-more-btn">
+						<StyledBtn
+							textColor="buttonTextWhite"
+							bgColor="buttons"
+							borderColor="buttonBorder"
+							onClick={clickedLoadMore}
+						>
+							Load More
+						</StyledBtn>
+					</div>
+				)}
+				{hideAllButton && (
+					<div className="catalog__btns-container__hide-all-btn">
+						<StyledBtn
+							textColor="buttonTextWhite"
+							bgColor="buttons"
+							borderColor="buttonBorder"
+							onClick={clickedHideAll}
+						>
+							Hide All
+						</StyledBtn>
+					</div>
+				)}
 			</div>
 		</div>
 	);

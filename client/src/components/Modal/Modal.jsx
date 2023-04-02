@@ -8,7 +8,6 @@ export const Modal = ({ isVisible, onClose, children }) => {
 	if (!isVisible) {
 		return null;
 	}
-	console.log(onClose);
 	return (
 		<div className="wrapper">
 			<OutsideClickWrapper onOutsideClick={onClose}>
@@ -23,6 +22,7 @@ export const Modal = ({ isVisible, onClose, children }) => {
 								width="4em"
 								height="3em"
 								aerrow={false}
+								onClick={onClose}
 							>
 								X
 							</StyledBtn>

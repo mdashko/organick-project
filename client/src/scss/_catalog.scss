@@ -7,8 +7,13 @@
 	flex-direction: column;
 	&__product-container {
 		display: flex;
-		padding: 2.5em;
+		padding: 3.5em;
 		flex-wrap: wrap;
 		@include center-elements;
+	}
+	&__btns-container {
+		display: flex;
+		@include center-elements;
+		@include margin-btn;
 	}
 }

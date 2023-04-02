@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../../scss/App.scss";
-import { colors } from "../../constants";
 import { images } from "../../images/index.js";
 import { StyledText } from "../../UI/StyledText";
 import { ProductModal } from "../ProductModal/ProductModal";
@@ -13,6 +12,7 @@ export const Product = ({
 	rating,
 	price,
 	newPrice = "",
+	description,
 }) => {
 	const [modalIsVisible, setIsVisible] = useState(false);
 
@@ -22,39 +22,22 @@ export const Product = ({
 	const onOpen = () => {
 		setIsVisible(true);
 	};
-	console.log(image, name, type, rating, price, newPrice);
 	return (
 		<>
-			{/* <Modal isVisible={modalIsVisible} onClose={onClose}>
-				<ProductModal />
-				{"передай сюди пропси бляха муха "}
-			</Modal> */}
-			<div
-				onClick={onOpen}
-				style={{
-					borderRadius: "2em",
-					backgroundColor: colors["productClr"],
-					width: "19em",
-					height: "24em",
-					display: "flex",
-					flexDirection: "column",
-					margin: "0.5em",
-					cursor: "pointer",
-				}}
-			>
-				<div
-					style={{
-						borderRadius: "0.5em",
-						width: "6em",
-						height: "2em",
-						backgroundColor: colors["productTypeClr"],
-						backgroundBlendMode: "multiply",
-						margin: "1em",
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
+			<Modal isVisible={modalIsVisible} onClose={onClose}>
+				<ProductModal
+					image={image}
+					name={name}
+					type={type}
+					rating={rating}
+					price={price}
+					newPrice={newPrice}
+					description={description}
+					//isVisible={modalIsVisible}
+				/>
+			</Modal>
+			<div className="product" onClick={onOpen}>
+				<div className="product__type-wrapper">
 					<StyledText
 						size="p"
 						weight="thin"
@@ -64,19 +47,8 @@ export const Product = ({
 						{type}
 					</StyledText>
 				</div>
-				<img
-					style={{
-						width: "auto",
-						height: "15em",
-					}}
-					src={image}
-					alt={name}
-				/>
-				<div
-					style={{
-						margin: "1em",
-					}}
-				>
+				<img className="product_img" src={image} alt={name} />
+				<div className="product__details-container">
 					<StyledText
 						size="p"
 						weight="thin"
@@ -86,54 +58,33 @@ export const Product = ({
 						{name}
 					</StyledText>
 					<img
-						style={{
-							alignSelf: "center",
-						}}
+						className="product__details-container_line"
 						src={images.productLine}
 						alt="line"
 					/>
-					<div
-						style={{
-							display: "flex",
-							justifyContent: "space-between",
-						}}
-					>
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "space-between",
-							}}
-						>
-							<span
-								style={{
-									textDecoration: `${newPrice ? "line-throught" : "none"}`,
-									color: colors["productOldPriceClr"],
-								}}
-							>
+					<div className="product__details-container__price-container">
+						<div className="product__details-container__price-container__price">
+							<span className="product__details-container__price-container__price_wrapper">
 								<StyledText
 									size="p"
 									weight="thin"
 									family="products"
 									color="productOldPriceClr"
 								>
-									{price}
+									{newPrice !== 0 && `$${price}`}
 								</StyledText>
 							</span>
-							{newPrice && (
-								<StyledText
-									size="p"
-									weight="thin"
-									family="products"
-									color="productText"
-								>
-									{newPrice}
-								</StyledText>
-							)}
+							<StyledText
+								size="p"
+								weight="thin"
+								family="products"
+								color="productText"
+							>
+								{newPrice === 0 ? `$${price}` : `$${newPrice}`}
+							</StyledText>
 						</div>
 						<img
-							style={{
-								width: "20%",
-							}}
+							className="product__details-container__price-container_rating"
 							src={rating}
 							alt="rating"
 						/>
