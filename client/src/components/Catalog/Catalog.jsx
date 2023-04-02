@@ -40,17 +40,20 @@ export const Catalog = () => {
 	return (
 		<div className="catalog">
 			<div className="catalog__product-container">
-				{products.slice(0, productsPerView).map((product) => (
-					<Product
-						image={product.image}
-						name={product.name}
-						type={product.type}
-						rating={product.rating}
-						price={product.price}
-						newPrice={product.newPrice}
-						description={product.description}
-					/>
-				))}
+				{products
+					.slice(0, productsPerView)
+					.sort((product) => product.newPrice !== 0)
+					.map((product) => (
+						<Product
+							image={product.image}
+							name={product.name}
+							type={product.type}
+							rating={product.rating}
+							price={product.price}
+							newPrice={product.newPrice}
+							description={product.description}
+						/>
+					))}
 			</div>
 			<div className="catalog__btns-container">
 				{LoadMoreButton && (
