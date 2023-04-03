@@ -6,17 +6,15 @@ import { StyledBtn } from "../UI/StyledBtn";
 import { Product } from "../components/Product/Product";
 import { images } from "../images/index.js";
 import { Catalog } from "../components/Catalog/Catalog";
-import { MainProvider } from "../components/CartContext";
-import { useNavigate } from "react-router-dom";
+import { CartProvider } from "../components/CartContext";
+import { ProductProvider } from "../components/ProductContext";
 
 export const Main = () => {
-	const navigate = useNavigate();
-	const navigateToCart = () => {
-		navigate("/Cart");
-	};
+	
 	return (
-		<MainProvider>
-			<Header navigateToCart />
+		<CartProvider>
+		<ProductProvider>
+			<Header/>
 			<div className="main">
 				<section className="main__banner">
 					<img
@@ -1191,6 +1189,7 @@ export const Main = () => {
 				</section>
 			</div>
 			<Footer />
-		</MainProvider>
+			</ProductProvider>
+		</CartProvider>
 	);
 };

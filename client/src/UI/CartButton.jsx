@@ -3,7 +3,7 @@ import { colors } from "../constants";
 import { images } from "../images";
 import { StyledText } from "./StyledText";
 
-export const CartButton = () => {
+export const CartButton = ({onClick,productLength}) => {
 	return (
 		<div
 			style={{

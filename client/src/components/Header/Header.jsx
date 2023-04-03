@@ -4,7 +4,8 @@ import { pagesLinks } from "../../constants";
 import { images } from "../../images/index.js";
 import { CartButton } from "../../UI/CartButton";
 import { SearchBar } from "../../UI/SearchBar";
-import { MainContext } from "../CartContext";
+import { CartContext } from "../CartContext";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
 	const [showMenu, setShownMenu] = useState(false);
@@ -14,8 +15,13 @@ export const Header = () => {
 		setShownMenu((prev) => !prev);
 	});
 
-	const { products } = useContext(MainContext);
-	console.log(products);
+	const { products } = useContext(CartContext);
+
+	const navigate = useNavigate();
+	const navigateToCart = () => {
+		navigate("/Cart");
+	};
+
 	return (
 		<div className="header">
 			<div className="header__logo">
@@ -33,7 +39,7 @@ export const Header = () => {
 				{showMenu && (
 					<>
 						<SearchBar />
-						<CartButton />
+						<CartButton onClick={navigateToCart} productLength={products.length}/>
 					</>
 				)}
 			</div>

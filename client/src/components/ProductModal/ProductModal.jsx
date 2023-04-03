@@ -3,7 +3,7 @@ import "../../scss/App.scss";
 import { colors } from "../../constants";
 import { StyledText } from "../../UI/StyledText";
 import { StyledBtn } from "../../UI/StyledBtn";
-import { MainContext } from "../CartContext";
+import { CartContext } from "../CartContext";
 
 export const ProductModal = ({
 	image,
@@ -16,7 +16,7 @@ export const ProductModal = ({
 	//isVisible = false,
 }) => {
 	const [quantity, setQuantity] = useState(0);
-	const { updateProducts } = useContext(MainContext);
+	const { updateProducts } = useContext(CartContext);
 
 	return (
 		<div className="productModal">

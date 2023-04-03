@@ -1,0 +1,25 @@
+{
+  "name": "organick-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm start",
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdashko/organick-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdashko/organick-project/issues"
+  },
+  "homepage": "https://github.com/mdashko/organick-project#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}

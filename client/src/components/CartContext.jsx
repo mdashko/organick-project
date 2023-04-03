@@ -1,14 +1,14 @@
 import React, { createContext, useState } from "react";
 
-export const MainContext = createContext(null);
-export function MainProvider({ children }) {
+export const CartContext = createContext(null);
+export function CartProvider({ children }) {
 	const [products, setProducts] = useState(0);
 	function updateProducts(newProducts) {
 		setProducts(newProducts);
 	}
 	return (
-		<MainContext.Provider value={{ products, updateProducts }}>
+		<CartContext.Provider value={{ products, updateProducts }}>
 			{children}
-		</MainContext.Provider>
+		</CartContext.Provider>
 	);
 }
