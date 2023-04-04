@@ -21,80 +21,91 @@ export const Cart = () => {
 		setIsButtonVisible(false);
 	};
 
+	const countTotalCost = () => {
+		products.reduce((prev, next) => prev.totalCost + next.totalCost, 0);
+	};
+
 	return (
-		<ProductProvider>
-			<CartProvider>
-				<Header />
-				<div className="cart">
-					<section className="cart__banner">
-						<img
-							className="cart__banner__background"
-							src={images.cartBanner}
-							alt="peaches"
-						/>
-						<div className="cart__banner__name-wrapper">
+		<>
+			<Header />
+			<div className="cart">
+				<section className="cart__banner">
+					<img
+						className="cart__banner__background"
+						src={images.cartBanner}
+						alt="peaches"
+					/>
+					<div className="cart__banner__name-wrapper">
+						<StyledText
+							size="h2"
+							weight="bold"
+							family="headings"
+							color="headings"
+						>
+							Cart
+						</StyledText>
+					</div>
+				</section>
+
+				<div className="cart__cart">
+					<div className="cart__cart__products-container">
+						{products.map((product) => (
+							<ProductCart
+								image={product.image}
+								name={product.name}
+								type={product.type}
+								price={product.price}
+								newPrice={product.newPrice}
+								quantity={product.quantity}
+								totalCost={product.totalCost}
+								totalDiscount={product.totalDiscount}
+							/>
+						))}
+					</div>
+					<div className="cart__cart__price-container">
+						<div className="cart__cart__price-container__price">
 							<StyledText
-								size="h2"
-								weight="bold"
-								family="headings"
-								color="headings"
+								size="h6"
+								weight="thin"
+								family="products"
+								color="productText"
 							>
-								Cart
+								Total Cost:{" "}
+								{`${products.reduce(
+									(prev, next) => prev.totalCost + next.totalCost,
+									0
+								)}$`}
+							</StyledText>
+							<StyledText
+								size="h6"
+								weight="thin"
+								family="products"
+								color="productText"
+							>
+								Discount:{" "}
+								{`${products.reduce(
+									(prev, next) => prev.totalDiscount + next.totalDiscount,
+									0
+								)}$`}
 							</StyledText>
 						</div>
-					</section>
-
-					<div className="cart__cart">
-						<div className="cart__cart__products-container">
-							{products.map((product) => (
-								<ProductCart
-									image={product.image}
-									name={product.name}
-									type={product.type}
-									price={product.price}
-									newPrice={product.newPrice}
-									quantity={product.quantity}
-									totalCost={product.totalCost}
-								/>
-							))}
-						</div>
-						<div className="cart__cart__price-container">
-							<div className="cart__cart__price-container__price">
-								<StyledText
-									size="h6"
-									weight="thin"
-									family="products"
-									color="productText"
-								>
-									Total Cost: {`$`}
-								</StyledText>
-								<StyledText
-									size="h6"
-									weight="thin"
-									family="products"
-									color="productText"
-								>
-									Discount: {}
-								</StyledText>
-							</div>
-						</div>
-						<div className="cart__cart__order-btn">
-							{isButtonVisible && (
-								<StyledBtn
-									textColor="buttonTextWhite"
-									bgColor="buttons"
-									borderColor="buttonBorder"
-									onClick={openForm}
-								>
-									To order
-								</StyledBtn>
-							)}
-						</div>
-						{isFormOpen && <Form />}
 					</div>
+					<div className="cart__cart__order-btn">
+						{isButtonVisible && (
+							<StyledBtn
+								textColor="buttonTextWhite"
+								bgColor="buttons"
+								borderColor="buttonBorder"
+								onClick={openForm}
+							>
+								To order
+							</StyledBtn>
+						)}
+					</div>
+					{isFormOpen && <Form />}
 				</div>
-				<Footer />
-			</CartProvider>
-		</ProductProvider>
+			</div>
+			<Footer />
+		</>
 	);
 };

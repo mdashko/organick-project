@@ -20,7 +20,7 @@ export function CartProvider({ children }) {
 	}
 
 	function removeProduct(productID) {
-		let newProducts = products.filter(
+		const newProducts = products.filter(
 			(product) => product.productID !== productID
 		);
 		setProducts(newProducts);

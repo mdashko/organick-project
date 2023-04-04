@@ -12,6 +12,7 @@ export const ProductCart = ({
 	newPrice = "",
 	quantity,
 	totalCost,
+	totalDiscount,
 }) => {
 	const { removeProduct } = useContext(CartContext);
 

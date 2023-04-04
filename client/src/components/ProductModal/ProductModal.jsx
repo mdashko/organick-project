@@ -29,6 +29,7 @@ export const ProductModal = ({
 			newPrice: newPrice,
 			quantity: quantity,
 			totalCost: (newPrice ? newPrice : price) * quantity,
+			totalDiscount: newPrice ? (price - newPrice) * quantity : 0,
 		};
 		updateProducts(product);
 	};
