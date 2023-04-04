@@ -1,5 +1,4 @@
-import React, { createContext, useState } from "react";
-import { ifProductExists } from "../constants";
+import React, { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext(null);
 export function CartProvider({ children }) {
@@ -7,7 +6,8 @@ export function CartProvider({ children }) {
 
 	function updateProducts(newProduct) {
 		const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-		if (ifProductExists(newProduct, cart)) {
+
+		if (cart.some((product) => product.productID === newProduct.productID)) {
 			const updateProduct = cart.findIndex(
 				(product) => product.productID === newProduct.productID
 			);
@@ -18,10 +18,22 @@ export function CartProvider({ children }) {
 		}
 		localStorage.setItem("cart", JSON.stringify(cart));
 	}
-	//useEffect(() => updateProducts(), []);
+
+	function removeProduct(productID) {
+		let newProducts = products.filter(
+			(product) => product.productID !== productID
+		);
+		setProducts(newProducts);
+		localStorage.setItem("cart", JSON.stringify(newProducts));
+	}
+
+	useEffect(() => {
+		const products = JSON.parse(localStorage.getItem("cart") || "[]");
+		setProducts(products);
+	}, []);
 
 	return (
-		<CartContext.Provider value={{ products, updateProducts }}>
+		<CartContext.Provider value={{ products, updateProducts, removeProduct }}>
 			{children}
 		</CartContext.Provider>
 	);

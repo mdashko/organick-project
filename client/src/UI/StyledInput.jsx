@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { sizes, fontFamilies, colors, weights } from "../constants";
+import React from "react";
+import { colors } from "../constants";
 
 export const StyledInput = ({
 	width,

@@ -1,11 +1,11 @@
-import React, { useCallback, useState, useContext } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import "../../scss/App.scss";
 import { pagesLinks } from "../../constants";
 import { images } from "../../images/index.js";
 import { CartButton } from "../../UI/CartButton";
 import { SearchBar } from "../../UI/SearchBar";
-import { CartContext } from "../CartContext";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../CartContext";
 
 export const Header = () => {
 	const [showMenu, setShownMenu] = useState(false);
@@ -16,11 +16,11 @@ export const Header = () => {
 	});
 
 	const { products } = useContext(CartContext);
-	
-	const navigate = useNavigate();
-	const navigateToCart = () => {
-		navigate("/Cart");
-	};
+
+	// const navigate = useNavigate();
+	// const navigateToCart = () => {
+	// 	navigate("/Cart");
+	// };
 
 	return (
 		<div className="header">
@@ -39,10 +39,7 @@ export const Header = () => {
 				{showMenu && (
 					<>
 						<SearchBar />
-						<CartButton
-							onClick={navigateToCart}
-							productLength={products.length}
-						/>
+						<CartButton productLength={products.length} />
 					</>
 				)}
 			</div>

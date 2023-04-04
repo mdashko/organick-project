@@ -7,8 +7,8 @@ import { Cart } from "./pages/Cart";
 function App() {
 	return (
 		<div className="App">
-			<Pages />	
-			{/* <Cart /> */}
+			{/* <Pages />	 */}
+			<Cart />
 		</div>
 	);
 }

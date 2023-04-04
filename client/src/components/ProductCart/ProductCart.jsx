@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledBtn } from "../../UI/StyledBtn";
+import { CartContext } from "../CartContext";
 
 export const ProductCart = ({
 	productID,
@@ -12,6 +13,8 @@ export const ProductCart = ({
 	quantity,
 	totalCost,
 }) => {
+	const { removeProduct } = useContext(CartContext);
+
 	return (
 		<div className="productCart">
 			<div className="productCart__wrapper">
@@ -34,14 +37,14 @@ export const ProductCart = ({
 								{name}
 							</StyledText>
 							<div className="productCart__wrapper__content__details-container__price-container">
-								<span>
+								<span className="productCart__wrapper__content__details-container__price-container_wrapper">
 									<StyledText
 										size="p"
 										weight="thin"
 										family="products"
 										color="productOldPriceClr"
 									>
-										{newPrice !== "" ? price : ""}
+										{newPrice !== 0 && `$${price}`}
 									</StyledText>
 								</span>
 								<StyledText
@@ -50,7 +53,7 @@ export const ProductCart = ({
 									family="products"
 									color="productText"
 								>
-									{newPrice !== "" ? newPrice : price}
+									{newPrice === 0 ? `$${price}` : `$${newPrice}`}
 								</StyledText>
 							</div>
 						</div>
@@ -78,29 +81,10 @@ export const ProductCart = ({
 							width="4em"
 							height="3em"
 							aerrow={false}
+							onClick={removeProduct(productID)}
 						>
 							X
 						</StyledBtn>
-					</div>
-				</div>
-				<div className="productCart__wrapper__price-container">
-					<div className="productCart__wrapper__price-container__price">
-						<StyledText
-							size="h6"
-							weight="thin"
-							family="products"
-							color="productText"
-						>
-							Total Cost: {`$${totalCost}`}
-						</StyledText>
-						<StyledText
-							size="h6"
-							weight="thin"
-							family="products"
-							color="productText"
-						>
-							Discount: {newPrice - price}
-						</StyledText>
 					</div>
 				</div>
 			</div>

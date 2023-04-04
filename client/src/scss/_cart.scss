@@ -24,9 +24,21 @@
 		@include center-elements;
 		margin: 2em 0;
 		background-color: $cartClr;
+		padding: 0 15em;
 		&__products-container {
 			&__product {
 				display: flex;
+			}
+		}
+		&__price-container {
+			display: flex;
+			flex-direction: column;
+			align-self: flex-end;
+			margin: 0 5.5em;
+			&__price {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
 			}
 		}
 		&__order-btn {

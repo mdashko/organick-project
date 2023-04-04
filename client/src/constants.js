@@ -67,9 +67,4 @@ export const pagesLinks = [
 	{ label: "News", path: "" },
 ];
 
-export const ifProductExists = (newProduct, cart) => {
-	for (let product in cart) {
-		if (cart[product].productID === newProduct.productID) return true;
-	}
-	return false;
-};
+

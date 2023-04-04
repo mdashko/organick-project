@@ -28,7 +28,7 @@ export const StyledBtn = ({
 		>
 			{children}{" "}
 			<img
-				src={aerrow ? images.aerrow : null}
+				src={aerrow && images.aerrow}
 				style={{ position: "absolute", bottom: "30%", right: "10%" }}
 			/>
 		</button>

@@ -1535,11 +1535,36 @@ button {
           justify-content: center;
   margin: 2em 0;
   background-color: rgba(253, 176, 45, 0.1607843137);
+  padding: 0 15em;
 }
 .cart__cart__products-container__product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+.cart__cart__price-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0 5.5em;
+}
+.cart__cart__price-container__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .cart__cart__order-btn {
   display: -webkit-box;
@@ -1611,9 +1636,12 @@ button {
           justify-content: center;
 }
 .productCart__wrapper__content__details-container__price-container {
+  margin: 0 0.5em;
+}
+.productCart__wrapper__content__details-container__price-container_wrapper {
   text-decoration: line-through;
   color: #b8b8b8;
-  margin: 0 0.5em;
+  margin: 0 0.2em;
 }
 .productCart__wrapper__content__quantity-container {
   display: -webkit-box;
@@ -1643,30 +1671,6 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.productCart__wrapper__price-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin: 0 5.5em;
-}
-.productCart__wrapper__price-container__price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
 }
 
 @media sceen and (max-width: 900px) {

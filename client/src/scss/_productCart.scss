@@ -32,9 +32,12 @@
 					@include center-elements;
 				}
 				&__price-container {
-					text-decoration: line-through;
-					color: $productOldPriceClr;
 					margin: 0 0.5em;
+					&_wrapper {
+						text-decoration: line-through;
+						color: $productOldPriceClr;
+						margin: 0 0.2em;
+					}
 				}
 			}
 			&__quantity-container {
@@ -54,17 +57,6 @@
 				display: flex;
 				justify-self: center;
 				align-items: center;
-			}
-		}
-		&__price-container {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			margin: 0 5.5em;
-			&__price {
-				display: flex;
-				flex-direction: column;
-				align-self: flex-end;
 			}
 		}
 	}
