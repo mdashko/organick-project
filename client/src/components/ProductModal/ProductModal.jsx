@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import "../../scss/App.scss";
-import { colors } from "../../constants";
 import { StyledText } from "../../UI/StyledText";
 import { StyledBtn } from "../../UI/StyledBtn";
 import { CartContext } from "../CartContext";
+import { ProductContext } from "../ProductContext";
 
 export const ProductModal = ({
+	productID,
 	image,
 	name,
 	type,
@@ -15,8 +16,22 @@ export const ProductModal = ({
 	description,
 	//isVisible = false,
 }) => {
-	const [quantity, setQuantity] = useState(0);
+	const [quantity, setQuantity] = useState(1);
 	const { updateProducts } = useContext(CartContext);
+
+	const updateCart = () => {
+		const product = {
+			productID: productID,
+			image: image,
+			name: name,
+			type: type,
+			price: price,
+			newPrice: newPrice,
+			quantity: quantity,
+			totalCost: (newPrice ? newPrice : price) * quantity,
+		};
+		updateProducts(product);
+	};
 
 	return (
 		<div className="productModal">
@@ -92,6 +107,7 @@ export const ProductModal = ({
 					</StyledText>
 					<input
 						className="productModal__details-container__quantity-container_quantity"
+						value={quantity}
 						onChange={(e) => setQuantity(e.target.value)}
 						type="text"
 					/>
@@ -102,7 +118,7 @@ export const ProductModal = ({
 						borderColor="buttonBorder"
 						width="14.5em"
 						height="3.5em"
-						onClick={() => updateProducts(quantity)}
+						onClick={updateCart}
 					>
 						Add To Cart
 					</StyledBtn>

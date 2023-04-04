@@ -1,6 +1,6 @@
 import "./scss/App.scss";
 import Pages from "./pages/Index";
-// import { Cart } from "./pages/Cart";
+import { Cart } from "./pages/Cart";
 //import { Form } from "./components/Form/Form";
 // import { ProductCart } from "./components/ProductCart/ProductCart";
 

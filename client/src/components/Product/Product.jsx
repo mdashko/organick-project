@@ -6,6 +6,7 @@ import { ProductModal } from "../ProductModal/ProductModal";
 import { Modal } from "../Modal/Modal";
 
 export const Product = ({
+	productID,
 	image,
 	name,
 	type,
@@ -26,6 +27,7 @@ export const Product = ({
 		<>
 			<Modal isVisible={modalIsVisible} onClose={onClose}>
 				<ProductModal
+					productID={productID}
 					image={image}
 					name={name}
 					type={type}

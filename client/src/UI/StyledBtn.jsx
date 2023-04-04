@@ -10,7 +10,7 @@ export const StyledBtn = ({
 	height = "4em",
 	aerrow = true,
 	children,
-	onClick = "undefined",
+	onClick,
 }) => {
 	return (
 		<button

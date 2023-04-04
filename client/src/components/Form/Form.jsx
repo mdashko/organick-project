@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledInput } from "../../UI/StyledInput";
 import { StyledBtn } from "../../UI/StyledBtn";
+import {CartContext} from "../CartContext";
 
 export const Form = () => {
 	const [fullName, setFullName] = useState("");
@@ -24,6 +25,8 @@ export const Form = () => {
 	const handlePhone = (event) => setPhone(event.target.value);
 	const handleMessage = (event) => setMessage(event.target.value);
 
+	const { products } = useContext(CartContext);
+
 	const submitForm = () => {
 		setErrorName(!nameRegex.test(fullName));
 		setErrorEmail(!emailRegex.test(email));
@@ -39,19 +42,20 @@ export const Form = () => {
 					address,
 					phone,
 					message,
-					// products: products.map((el) => ({
-					// 	productId: el.id,
-					// 	quantity: el.quantity,
-					// })),
-					// totalPrice: products.reduce((prev, next) => {
-					// 	if (prev.newPrice) {
-					// 		return prev.newPrice * prev.quantity;
-					// 	}
-					// 	return prev.price * prev.quantity;
-					// }, 0),
+					products: products.map((el) => ({
+						productId: el.id,
+						quantity: el.quantity,
+					})),
+					totalPrice: products.reduce((prev, next) => {
+						if (prev.newPrice) {
+							return prev.newPrice * prev.quantity;
+						}
+						return prev.price * prev.quantity;
+					}, 0),
 				}),
 			}).then((res) => console.log("good"));
 		}
+		localStorage.removeItem("cart");
 	};
 
 	return (

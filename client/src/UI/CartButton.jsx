@@ -3,7 +3,7 @@ import { colors } from "../constants";
 import { images } from "../images";
 import { StyledText } from "./StyledText";
 
-export const CartButton = ({onClick,productLength}) => {
+export const CartButton = ({ onClick, productLength }) => {
 	return (
 		<div
 			style={{
@@ -31,7 +31,10 @@ export const CartButton = ({onClick,productLength}) => {
 				}}
 			>
 				<StyledText size="p" weight="bold" family="headings" color="headings">
-					Cart(0)
+					Cart{" "}
+					<span style={{ color: productLength > 0 && "red" }}>
+						({productLength})
+					</span>
 				</StyledText>
 			</div>
 		</div>

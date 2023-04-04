@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect} from "react";
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const ProductContext = createContext(null);
@@ -11,7 +11,8 @@ export function ProductProvider({ children }) {
 		axios
 			.get(`${process.env.REACT_APP_API_URL}/api/products`)
 			.then((res) => {
-				setProducts(res.data.data);
+				let productsArr = res.data.data;
+				setProducts(productsArr.sort((a, b) => b.newPrice - a.newPrice));
 			})
 			.catch((err) => {
 				console.log("Error: " + err);

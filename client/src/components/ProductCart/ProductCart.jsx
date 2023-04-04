@@ -3,7 +3,15 @@ import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledBtn } from "../../UI/StyledBtn";
 
-export const ProductCart = ({ id, img, name, price, newPrice = "" }) => {
+export const ProductCart = ({
+	productID,
+	image,
+	name,
+	price,
+	newPrice = "",
+	quantity,
+	totalCost,
+}) => {
 	return (
 		<div className="productCart">
 			<div className="productCart__wrapper">
@@ -11,7 +19,7 @@ export const ProductCart = ({ id, img, name, price, newPrice = "" }) => {
 					<div className="productCart__wrapper__content__img-container">
 						<img
 							className="productCart__wrapper__content__img-container_img"
-							src={img}
+							src={image}
 							alt={name}
 						/>
 					</div>
@@ -54,11 +62,12 @@ export const ProductCart = ({ id, img, name, price, newPrice = "" }) => {
 							family="products"
 							color="productText"
 						>
-							Quantity:{" "}
+							Quantity:
 						</StyledText>
 						<input
 							className="productCart__wrapper__content__quantity-container_quantity"
 							type="text"
+							value={quantity}
 						/>
 					</div>
 					<div className="productCart__wrapper__content__btn-container">
@@ -82,7 +91,7 @@ export const ProductCart = ({ id, img, name, price, newPrice = "" }) => {
 							family="products"
 							color="productText"
 						>
-							Total Cost:{" "}
+							Total Cost: {`$${totalCost}`}
 						</StyledText>
 						<StyledText
 							size="h6"
@@ -90,7 +99,7 @@ export const ProductCart = ({ id, img, name, price, newPrice = "" }) => {
 							family="products"
 							color="productText"
 						>
-							Discount:{" "}
+							Discount: {newPrice - price}
 						</StyledText>
 					</div>
 				</div>
