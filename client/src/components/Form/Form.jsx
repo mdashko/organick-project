@@ -58,10 +58,11 @@ export const Form = () => {
 						return prev.price * prev.quantity;
 					}, 0),
 				}),
-			}).then((res) => console.log("good"));
+			}).then((res) => {
+				navigateToConfirmation();
+				localStorage.removeItem("cart");
+			});
 		}
-		localStorage.removeItem("cart");
-		navigateToConfirmation();
 	};
 
 	return (

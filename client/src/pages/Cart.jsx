@@ -7,23 +7,24 @@ import { images } from "../images/index.js";
 import { ProductCart } from "../components/ProductCart/ProductCart";
 import { Form } from "../components/Form/Form";
 import { CartContext } from "../components/CartContext";
-import { CartProvider } from "../components/CartContext";
-import { ProductProvider } from "../components/ProductContext";
 
 export const Cart = () => {
 	const [isFormOpen, setIsFormOpen] = useState(false);
 	const [isButtonVisible, setIsButtonVisible] = useState(true);
 
 	const { products } = useContext(CartContext);
+	console.log(products.length);
 
 	const openForm = () => {
 		setIsFormOpen(true);
 		setIsButtonVisible(false);
 	};
 
-	const countTotalCost = () => {
-		products.reduce((prev, next) => prev.totalCost + next.totalCost, 0);
-	};
+	const countTotalCost = () =>
+		products.reduce((accum, obj) => accum + obj.totalCost, 0);
+
+	const countTotalDiscount = () =>
+		products.reduce((accum, obj) => accum + obj.totalDiscount, 0);
 
 	return (
 		<>
@@ -47,63 +48,57 @@ export const Cart = () => {
 					</div>
 				</section>
 
-				<div className="cart__cart">
-					<div className="cart__cart__products-container">
-						{products.map((product) => (
-							<ProductCart
-								image={product.image}
-								name={product.name}
-								type={product.type}
-								price={product.price}
-								newPrice={product.newPrice}
-								quantity={product.quantity}
-								totalCost={product.totalCost}
-								totalDiscount={product.totalDiscount}
-							/>
-						))}
-					</div>
-					<div className="cart__cart__price-container">
-						<div className="cart__cart__price-container__price">
-							<StyledText
-								size="h6"
-								weight="thin"
-								family="products"
-								color="productText"
-							>
-								Total Cost:{" "}
-								{`${products.reduce(
-									(prev, next) => prev.totalCost + next.totalCost,
-									0
-								)}$`}
-							</StyledText>
-							<StyledText
-								size="h6"
-								weight="thin"
-								family="products"
-								color="productText"
-							>
-								Discount:{" "}
-								{`${products.reduce(
-									(prev, next) => prev.totalDiscount + next.totalDiscount,
-									0
-								)}$`}
-							</StyledText>
+				{products.length && (
+					<div className="cart__cart">
+						<div className="cart__cart__products-container">
+							{products.map((product) => (
+								<ProductCart
+									image={product.image}
+									name={product.name}
+									type={product.type}
+									price={product.price}
+									newPrice={product.newPrice}
+									quantity={product.quantity}
+									totalCost={product.totalCost}
+									totalDiscount={product.totalDiscount}
+								/>
+							))}
 						</div>
+						<div className="cart__cart__price-container">
+							<div className="cart__cart__price-container__price">
+								<StyledText
+									size="h6"
+									weight="thin"
+									family="products"
+									color="productText"
+								>
+									Total Cost: {() => countTotalCost()}$
+								</StyledText>
+								<StyledText
+									size="h6"
+									weight="thin"
+									family="products"
+									color="productText"
+								>
+									Discount: {() => countTotalDiscount()}$
+								</StyledText>
+							</div>
+						</div>
+						<div className="cart__cart__order-btn">
+							{isButtonVisible && (
+								<StyledBtn
+									textColor="buttonTextWhite"
+									bgColor="buttons"
+									borderColor="buttonBorder"
+									onClick={openForm}
+								>
+									To order
+								</StyledBtn>
+							)}
+						</div>
+						{isFormOpen && <Form />}
 					</div>
-					<div className="cart__cart__order-btn">
-						{isButtonVisible && (
-							<StyledBtn
-								textColor="buttonTextWhite"
-								bgColor="buttons"
-								borderColor="buttonBorder"
-								onClick={openForm}
-							>
-								To order
-							</StyledBtn>
-						)}
-					</div>
-					{isFormOpen && <Form />}
-				</div>
+				)}
 			</div>
 			<Footer />
 		</>

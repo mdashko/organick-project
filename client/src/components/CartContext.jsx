@@ -20,9 +20,10 @@ export function CartProvider({ children }) {
 	}
 
 	function removeProduct(productID) {
-		const newProducts = products.filter(
-			(product) => product.productID !== productID
-		);
+		const newProducts = products.filter((product) => {
+			return product.productID !== productID;
+		});
+		console.log(newProducts);
 		setProducts(newProducts);
 		localStorage.setItem("cart", JSON.stringify(newProducts));
 	}

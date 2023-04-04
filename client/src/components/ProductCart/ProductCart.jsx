@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledBtn } from "../../UI/StyledBtn";
@@ -15,6 +15,10 @@ export const ProductCart = ({
 	totalDiscount,
 }) => {
 	const { removeProduct } = useContext(CartContext);
+
+	const removeProductById = React.useCallback(() => {
+		removeProduct(productID);
+	}, [productID, removeProduct]);
 
 	return (
 		<div className="productCart">
@@ -82,7 +86,7 @@ export const ProductCart = ({
 							width="4em"
 							height="3em"
 							aerrow={false}
-							onClick={removeProduct(productID)}
+							onClick={removeProductById}
 						>
 							X
 						</StyledBtn>
