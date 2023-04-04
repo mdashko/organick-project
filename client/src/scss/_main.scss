@@ -3,6 +3,7 @@
 @import "_variables.scss";
 
 .main {
+	margin-top: 9%;
 	background-color: $mainClr;
 	&__banner {
 		position: relative;
@@ -113,7 +114,6 @@
 			flex-direction: column;
 			@include center-elements;
 		}
-		
 	}
 	&__testimonial {
 		position: relative;

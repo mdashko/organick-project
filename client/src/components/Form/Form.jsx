@@ -3,7 +3,8 @@ import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledInput } from "../../UI/StyledInput";
 import { StyledBtn } from "../../UI/StyledBtn";
-import {CartContext} from "../CartContext";
+import { CartContext } from "../CartContext";
+import { useNavigate } from "react-router-dom";
 
 export const Form = () => {
 	const [fullName, setFullName] = useState("");
@@ -26,6 +27,10 @@ export const Form = () => {
 	const handleMessage = (event) => setMessage(event.target.value);
 
 	const { products } = useContext(CartContext);
+	const navigate = useNavigate();
+	const navigateToConfirmation = () => {
+		navigate("/Confirmation");
+	};
 
 	const submitForm = () => {
 		setErrorName(!nameRegex.test(fullName));
@@ -56,6 +61,7 @@ export const Form = () => {
 			}).then((res) => console.log("good"));
 		}
 		localStorage.removeItem("cart");
+		navigateToConfirmation();
 	};
 
 	return (

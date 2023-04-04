@@ -9,10 +9,16 @@
 	font-family: $headerFonts;
 	color: $headerTextClr;
 	background-color: $headerClr;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
 	&__logo {
 		display: flex;
 		justify-content: baseline;
 		font-size: 1.5em;
+		cursor: pointer;
 		&_text {
 			margin: 0.5em;
 		}

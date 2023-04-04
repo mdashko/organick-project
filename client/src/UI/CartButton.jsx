@@ -16,6 +16,7 @@ export const CartButton = ({ onClick, productLength }) => {
 				height: "3.5em",
 				cursor: "pointer",
 			}}
+			onClick={onClick}
 		>
 			<img
 				style={{ position: "absolute", height: "3em", left: "3%", top: "5.5%" }}

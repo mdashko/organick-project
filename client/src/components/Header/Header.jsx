@@ -17,10 +17,10 @@ export const Header = () => {
 
 	const { products } = useContext(CartContext);
 
-	// const navigate = useNavigate();
-	// const navigateToCart = () => {
-	// 	navigate("/Cart");
-	// };
+	const navigate = useNavigate();
+	const navigateToCart = () => {
+		navigate("/Cart");
+	};
 
 	return (
 		<div className="header">
@@ -53,7 +53,7 @@ export const Header = () => {
 			</div>
 			<div className="header__inputs">
 				<SearchBar />
-				<CartButton productLength={products.length} />
+				<CartButton onClick={navigateToCart} productLength={products.length} />
 			</div>
 		</div>
 	);
