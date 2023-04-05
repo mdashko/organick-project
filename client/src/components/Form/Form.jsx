@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, createRef } from "react";
 import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledInput } from "../../UI/StyledInput";
@@ -16,9 +16,14 @@ export const Form = () => {
 	const [errorEmail, setErrorEmail] = useState(false);
 	const [errorAddress, setErrorAddress] = useState(false);
 	const [errorPhone, setErrorPhone] = useState(false);
+	const navigate = useNavigate();
+	const isInitialMount = createRef(true);
+
+	const { products } = useContext(CartContext);
 
 	const nameRegex = /^[a-zA-Z\-]+$/;
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const phoneRegex = /^\d+$/;
 
 	const handleFullName = (event) => setFullName(event.target.value);
 	const handleEmail = (event) => setEmail(event.target.value);
@@ -26,17 +31,22 @@ export const Form = () => {
 	const handlePhone = (event) => setPhone(event.target.value);
 	const handleMessage = (event) => setMessage(event.target.value);
 
-	const { products } = useContext(CartContext);
-	const navigate = useNavigate();
-	const navigateToConfirmation = () => {
-		navigate("/Confirmation");
-	};
-
-	const submitForm = () => {
+	const validate = () => {
 		setErrorName(!nameRegex.test(fullName));
 		setErrorEmail(!emailRegex.test(email));
-		setErrorAddress(!(address !== ""));
-		setErrorPhone(!(phone !== ""));
+		setErrorAddress(!address);
+		setErrorPhone(!phoneRegex.test(phone));
+	};
+	//fullName, email, address, phone
+	useEffect(() => {
+		if (isInitialMount.current) {
+			isInitialMount.current = false;
+		} else {
+			validate();
+		}
+	});
+
+	const submitForm = () => {
 		if (!errorName && !errorEmail && !errorAddress && !errorPhone) {
 			fetch("http://localhost:5001/api/orders/create", {
 				method: "POST",
@@ -48,20 +58,26 @@ export const Form = () => {
 					phone,
 					message,
 					products: products.map((el) => ({
-						productId: el.id,
+						productId: el.productID,
 						quantity: el.quantity,
 					})),
-					totalPrice: products.reduce((prev, next) => {
-						if (prev.newPrice) {
-							return prev.newPrice * prev.quantity;
+					totalPrice: products.reduce((acc, value) => {
+						if (value.newPrice) {
+							return acc + value.newPrice * value.quantity;
 						}
-						return prev.price * prev.quantity;
+						return acc + value.price * value.quantity;
 					}, 0),
 				}),
-			}).then((res) => {
-				navigateToConfirmation();
-				localStorage.removeItem("cart");
-			});
+			})
+				.then((res) => {
+					if (res.ok) {
+						navigate("/Confirmation");
+					}
+				})
+				.then((data) => {
+					products.length = 0;
+					localStorage.removeItem("cart");
+				});
 		}
 	};
 

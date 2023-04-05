@@ -1,8 +1,5 @@
 import "./scss/App.scss";
-import Pages from "./pages/index";
-import { Cart } from "./pages/Cart";
-//import { Form } from "./components/Form/Form";
-// import { ProductCart } from "./components/ProductCart/ProductCart";
+import Pages from "./pages/Index";
 
 function App() {
 	return (

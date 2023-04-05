@@ -14,6 +14,7 @@ export const Product = ({
 	price,
 	newPrice = "",
 	description,
+	canOpenModal = false,
 }) => {
 	const [modalIsVisible, setIsVisible] = useState(false);
 
@@ -35,10 +36,10 @@ export const Product = ({
 					price={price}
 					newPrice={newPrice}
 					description={description}
-					//isVisible={modalIsVisible}
+					onCloseModal= {onClose}
 				/>
 			</Modal>
-			<div className="product" onClick={onOpen}>
+			<div className="product" onClick={canOpenModal?onOpen:null}>
 				<div className="product__type-wrapper">
 					<StyledText
 						size="p"

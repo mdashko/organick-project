@@ -11,6 +11,7 @@ export const StyledBtn = ({
 	aerrow = true,
 	children,
 	onClick,
+	disabled = false,
 }) => {
 	return (
 		<button
@@ -24,9 +25,10 @@ export const StyledBtn = ({
 				fontFamily: fontFamilies["buttons"],
 				position: "relative",
 			}}
+			disabled={disabled}
 			onClick={onClick}
 		>
-			{children}{" "}
+			{children}
 			<img
 				src={aerrow && images.aerrow}
 				style={{ position: "absolute", bottom: "30%", right: "10%" }}

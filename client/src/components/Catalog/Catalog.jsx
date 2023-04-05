@@ -35,6 +35,7 @@ export const Catalog = () => {
 						price={product.price}
 						newPrice={product.newPrice}
 						description={product.description}
+						canOpenModal
 					/>
 				))}
 			</div>

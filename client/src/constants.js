@@ -43,6 +43,7 @@ export const colors = {
 	errorClr: "#ff0000",
 	headerInputClr: "#fafafa",
 	headerCartBorderClr: "#e0e0e0",
+	disabled: '#808080'
 };
 
 export const weights = {
@@ -59,12 +60,12 @@ export const widthes = {
 };
 
 export const pagesLinks = [
-	{ label: "Home", path: "" },
-	{ label: "About", path: "" },
-	{ label: "Pages", path: "" },
-	{ label: "Shop", path: "" },
-	{ label: "Project", path: "" },
-	{ label: "News", path: "" },
+	{ label: "Home", path: "/" },
+	{ label: "About", path: "/About" },
+	{ label: "Pages", path: "/Pages" },
+	{ label: "Shop", path: "/" },
+	{ label: "Project", path: "/Project" },
+	{ label: "News", path: "/News" },
 ];
 
 
