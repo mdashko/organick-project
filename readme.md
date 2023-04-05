@@ -52,3 +52,8 @@ Launches the test runner.
 
 `npm run eject`
 Ejects the app from the create-react-app setup. This allows you to customize the configuration of the app's build tools.
+
+## MongoDB
+
+login - 13martadashko31@gmail.com
+password - MartaDashko04
