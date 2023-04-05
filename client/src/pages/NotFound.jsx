@@ -4,13 +4,9 @@ import { Footer } from "../components/Footer/Footer";
 import { StyledText } from "../UI/StyledText";
 import { StyledBtn } from "../UI/StyledBtn";
 import { images } from "../images/index.js";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const NotFound = () => {
-	const navigate = useNavigate();
-	const navigateToMain = () => {
-		navigate("/Main");
-	};
 	return (
 		<>
 			<Header />
@@ -46,16 +42,17 @@ export const NotFound = () => {
 							The page you are looking for doesn't exist or has been moved
 						</StyledText>
 						<div className="notFound__banner__content__wrapper">
-							<StyledBtn
-								textColor="buttonTextWhite"
-								bgColor="buttons"
-								borderColor="buttonBorder"
-								height="4em"
-								width="14em"
-								onClick={navigateToMain}
-							>
-								Go to Homepage
-							</StyledBtn>
+							<Link to="/">
+								<StyledBtn
+									textColor="buttonTextWhite"
+									bgColor="buttons"
+									borderColor="buttonBorder"
+									height="4em"
+									width="14em"
+								>
+									Go to Homepage
+								</StyledBtn>
+							</Link>
 						</div>
 					</div>
 				</div>

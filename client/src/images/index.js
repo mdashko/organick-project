@@ -28,11 +28,12 @@ import pinterestIcon from "./pinterestIcon.svg";
 import verticalLine from "./line.svg";
 import horizontalLine from "./line2.svg";
 import cartBanner from "../images/cartBanner.svg";
-import notFoundBanner from "../images/notFoundBanner.svg";
+import notFoundBanner from "../images/notFoundBanner.png";
 import notFoundErrorNum from "../images/404.svg";
 import confirmationBanner from "./confirmationBanner.webp";
 import aerrow from "./aerrow.svg";
 import bars from "./bars.webp";
+import lemon from "./lemon.png";
 export const images = {
 	bannerImage,
 	bannerBackground,
@@ -69,4 +70,5 @@ export const images = {
 	confirmationBanner,
 	aerrow,
 	bars,
+	lemon,
 };

@@ -6,9 +6,8 @@ import { StyledBtn } from "../UI/StyledBtn";
 import { Product } from "../components/Product/Product";
 import { images } from "../images/index.js";
 import { Catalog } from "../components/Catalog/Catalog";
-import { CartProvider } from "../components/CartContext";
-import { ProductProvider } from "../components/ProductContext";
 import { StyledInput } from "../UI/StyledInput";
+import { LemonElement } from "../UI/LemonElement";
 
 export const Main = () => {
 	return (
@@ -16,6 +15,7 @@ export const Main = () => {
 			<Header />
 			<div className="main">
 				<section className="main__banner">
+					<LemonElement />
 					<img
 						className="main__banner_background"
 						src={images.bannerBackground}

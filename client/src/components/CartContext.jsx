@@ -72,6 +72,11 @@ export function CartProvider({ children }) {
     [products]
   );
 
+  const resetCart = React.useCallback(()=>{
+    setProducts([]);
+    localStorage.removeItem("cart");
+  })
+
   useEffect(() => {
     const products = JSON.parse(localStorage.getItem("cart") || "[]");
     setProducts(products);
@@ -87,6 +92,7 @@ export function CartProvider({ children }) {
         countTotalCost,
         countTotalDiscount,
         checkProductAlreadyInCart,
+        resetCart
       }}
     >
       {children}

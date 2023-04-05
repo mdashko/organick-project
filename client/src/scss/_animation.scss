@@ -1,0 +1,14 @@
+.animation {
+	z-index: 1000;
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	animation: spin 2s infinite;
+	animation-delay: 0s;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}

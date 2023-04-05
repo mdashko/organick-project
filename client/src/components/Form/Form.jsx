@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, createRef } from "react";
+import React, { useState, useContext } from "react";
 import "../../scss/App.scss";
 import { StyledText } from "../../UI/StyledText";
 import { StyledInput } from "../../UI/StyledInput";
@@ -17,11 +17,10 @@ export const Form = () => {
 	const [errorAddress, setErrorAddress] = useState(false);
 	const [errorPhone, setErrorPhone] = useState(false);
 	const navigate = useNavigate();
-	const isInitialMount = createRef(true);
 
-	const { products } = useContext(CartContext);
+	const { products,resetCart } = useContext(CartContext);
 
-	const nameRegex = /^[a-zA-Z\-]+$/;
+	const nameRegex = /^[a-zA-Zа-яА-ЯіІїЇєЄґҐ\s-]+$/;
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	const phoneRegex = /^\d+$/;
 
@@ -31,23 +30,12 @@ export const Form = () => {
 	const handlePhone = (event) => setPhone(event.target.value);
 	const handleMessage = (event) => setMessage(event.target.value);
 
-	const validate = () => {
-		setErrorName(!nameRegex.test(fullName));
+	const submitForm = () => {
+    setErrorName(!nameRegex.test(fullName));
 		setErrorEmail(!emailRegex.test(email));
 		setErrorAddress(!address);
-		setErrorPhone(!phoneRegex.test(phone));
-	};
-	//fullName, email, address, phone
-	useEffect(() => {
-		if (isInitialMount.current) {
-			isInitialMount.current = false;
-		} else {
-			validate();
-		}
-	});
-
-	const submitForm = () => {
-		if (!errorName && !errorEmail && !errorAddress && !errorPhone) {
+		setErrorPhone(!phoneRegex.test(phone))
+		if (nameRegex.test(fullName) && emailRegex.test(email) && address && phoneRegex.test(phone)) {
 			fetch("http://localhost:5001/api/orders/create", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -71,13 +59,10 @@ export const Form = () => {
 			})
 				.then((res) => {
 					if (res.ok) {
+            resetCart();
 						navigate("/Confirmation");
 					}
 				})
-				.then((data) => {
-					products.length = 0;
-					localStorage.removeItem("cart");
-				});
 		}
 	};
 
