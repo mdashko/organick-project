@@ -18,7 +18,7 @@ export const Form = () => {
 	const [errorPhone, setErrorPhone] = useState(false);
 	const navigate = useNavigate();
 
-	const { products,resetCart } = useContext(CartContext);
+	const { products, resetCart } = useContext(CartContext);
 
 	const nameRegex = /^[a-zA-Zа-яА-ЯіІїЇєЄґҐ\s-]+$/;
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -31,11 +31,16 @@ export const Form = () => {
 	const handleMessage = (event) => setMessage(event.target.value);
 
 	const submitForm = () => {
-    setErrorName(!nameRegex.test(fullName));
+		setErrorName(!nameRegex.test(fullName));
 		setErrorEmail(!emailRegex.test(email));
 		setErrorAddress(!address);
-		setErrorPhone(!phoneRegex.test(phone))
-		if (nameRegex.test(fullName) && emailRegex.test(email) && address && phoneRegex.test(phone)) {
+		setErrorPhone(!phoneRegex.test(phone));
+		if (
+			nameRegex.test(fullName) &&
+			emailRegex.test(email) &&
+			address &&
+			phoneRegex.test(phone)
+		) {
 			fetch("http://localhost:5001/api/orders/create", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -56,13 +61,12 @@ export const Form = () => {
 						return acc + value.price * value.quantity;
 					}, 0),
 				}),
-			})
-				.then((res) => {
-					if (res.ok) {
-            resetCart();
-						navigate("/Confirmation");
-					}
-				})
+			}).then((res) => {
+				if (res.ok) {
+					resetCart();
+					navigate("/Confirmation");
+				}
+			});
 		}
 	};
 
@@ -134,6 +138,7 @@ export const Form = () => {
 					<StyledInput
 						width="675px"
 						height="247px"
+						isTextArea
 						placeholder="some extra information"
 						onChange={handleMessage}
 					/>

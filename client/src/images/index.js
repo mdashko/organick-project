@@ -27,13 +27,13 @@ import twitterIcon from "./twitterIcon.svg";
 import pinterestIcon from "./pinterestIcon.svg";
 import verticalLine from "./line.svg";
 import horizontalLine from "./line2.svg";
-import cartBanner from "../images/cartBanner.svg";
+import cartBanner from "../images/cartBanner.png";
 import notFoundBanner from "../images/notFoundBanner.png";
 import notFoundErrorNum from "../images/404.svg";
 import confirmationBanner from "./confirmationBanner.webp";
 import aerrow from "./aerrow.svg";
 import bars from "./bars.webp";
-import lemon from "./lemon.png";
+import lemon from "./lemon.webp";
 export const images = {
 	bannerImage,
 	bannerBackground,

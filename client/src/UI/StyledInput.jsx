@@ -9,7 +9,21 @@ export const StyledInput = ({
 	required = false,
 	error,
 	onChange,
+	isTextArea,
 }) => {
+	if (isTextArea) {
+		return (
+			<textarea
+				style={{
+					width: width,
+					height: height,
+					padding: "0 1em",
+					margin: "0.5em 0",
+				}}
+				placeholder={placeholder}
+			></textarea>
+		);
+	}
 	return (
 		<input
 			required={required}

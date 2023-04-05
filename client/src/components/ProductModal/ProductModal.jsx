@@ -123,16 +123,6 @@ export const ProductModal = ({
           >
             {alreadyInCart ? "Already in Cart" : "Add to Cart"}
           </StyledBtn>
-          {/* <StyledBtn
-            textColor="buttonTextWhite"
-            bgColor="buttons"
-            borderColor="buttonBorder"
-            width="14.5em"
-            height="3.5em"
-            onClick={updateCart}
-          >
-           "Add to Cart"
-          </StyledBtn> */}
         </div>
       </div>
     </div>
